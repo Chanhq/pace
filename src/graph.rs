@@ -84,7 +84,7 @@ impl Graph {
                 }
             }
         }
-        
+
         feedback_arc_set
     }
 }
@@ -93,21 +93,21 @@ impl Graph {
 impl Graph {
     fn check_fixed_node_index(&self, index: usize) -> Result<(), Error> {
         if (0..self.number_of_fixed_nodes).contains(&index) {
-            return Ok(());
+            Ok(())
         } else {
-            return Err(Error::IndexError(format!(
+            Err(Error::IndexError(format!(
                 "Fixed index {index} is out of bounds"
-            )));
+            )))
         }
     }
 
     fn check_free_node_index(&self, index: usize) -> Result<(), Error> {
         if (self.number_of_fixed_nodes..self.number_of_nodes).contains(&index) {
-            return Ok(());
+            Ok(())
         } else {
-            return Err(Error::IndexError(format!(
+            Err(Error::IndexError(format!(
                 "Free index {index} is out of bounds"
-            )));
+            )))
         }
     }
 
@@ -147,13 +147,13 @@ impl Graph {
                     .get_mut(*neighbor_index)
                     .expect("The generated vector must be large enough to fit all graph indices");
 
-                if *degree > 1 {
-                    *degree -= 1;
-                } else if *degree == 1 {
-                    *degree -= 1;
-                    q.push_back(*neighbor_index);
-                } else {
-                    panic!("The degree of a node would have been reduced ")
+                match *degree {
+                    2.. => *degree -= 1,
+                    1 => {
+                        *degree -= 1;
+                        q.push_back(*neighbor_index);
+                    }
+                    0 => panic!("The degree of a node would have been reduced "),
                 }
             }
         }

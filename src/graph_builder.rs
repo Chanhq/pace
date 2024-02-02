@@ -89,7 +89,7 @@ impl GraphBuilder {
             return None;
         }
 
-        let fixed_option = words.get(0).unwrap().parse::<usize>().ok();
+        let fixed_option = words.first().unwrap().parse::<usize>().ok();
         let free_option = words.get(1).unwrap().parse::<usize>().ok();
 
         if fixed_option.is_none() || free_option.is_none() {
@@ -109,7 +109,7 @@ struct PLineInfo {
 
 impl PLineInfo {
     fn build(p_line: &str) -> Option<PLineInfo> {
-        if !p_line.starts_with("p") {
+        if !p_line.starts_with('p') {
             return None;
         }
 
