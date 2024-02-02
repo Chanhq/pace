@@ -1,6 +1,6 @@
 use core::panic;
 use std::{
-    collections::{HashSet, VecDeque},
+    collections::{HashMap, HashSet, VecDeque},
     iter,
 };
 
@@ -86,6 +86,43 @@ impl Graph {
         }
 
         feedback_arc_set
+    }
+
+    pub fn compute_number_of_crossings_with_default_ordering(&self) -> Result<usize, Error> {
+        self.compute_number_of_crossings_for_ordering(&(self.number_of_fixed_nodes..self.number_of_free_nodes).collect())
+    }
+
+    pub fn compute_number_of_crossings_for_ordering(&self, ordering :&Vec<usize>) -> Result<usize, Error> {
+        if ordering.len() != self.number_of_free_nodes {
+            return Err(Error::ValueError("The ordering does not contain all free nodes".to_string()));
+        }
+        let included_indices: HashSet<usize> = ordering.iter().cloned().collect();
+        if included_indices != (self.number_of_fixed_nodes..self.number_of_nodes).collect() {
+            return Err(Error::ValueError("The ordering does not contain all free nodes".to_string()));
+        }
+
+        let mut positions = HashMap::new();
+        for (position, free_node_index) in ordering.iter().enumerate() {
+            positions.insert(*free_node_index, position);
+        }
+
+        let mut number_of_crossings = 0;
+        for fixed_node_index1 in 0..self.number_of_fixed_nodes {
+            for fixed_node_index2 in (fixed_node_index1 + 1)..self.number_of_fixed_nodes {
+                for neighbor_index1 in self.adjacency_list.get(fixed_node_index1).expect("Index must exist") {
+                    for neighbor_index2 in self.adjacency_list.get(fixed_node_index2).expect("Index must exist") {
+                        let position1 = positions.get(neighbor_index1).expect("A position must have been found");
+                        let position2 = positions.get(neighbor_index2).expect("A position must have been found");
+
+                        if position2 < position1 {
+                            number_of_crossings += 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        Ok(number_of_crossings)
     }
 }
 
