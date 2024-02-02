@@ -1,0 +1,25 @@
+p ocr 4 4 8
+1 6
+1 8
+2 6
+2 7
+3 5
+3 7
+4 5
+4 8
+c adjacency-list
+c [0] 1: 6 8
+c [1] 2: 6 7
+c [2] 3: 5 7
+c [3] 4: 5 8
+c
+c adjacency-matrix
+c [ ][1][2][3][4]
+c [5] 0  0  1  1
+c [6] 1  1  0  0
+c [7] 0  1  1  0
+c [8] 1  0  0  1 
+c
+c
+c #identifierOfSetB - 1 - #numberOfColumns = #rowIndex
+c #identifierOfSetA - 1 = #columnIndex
