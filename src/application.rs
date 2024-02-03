@@ -12,11 +12,11 @@ use crate::{
 };
 
 pub struct BenchmarkStats {
-    number_of_fixed_nodes: usize,
-    number_of_free_nodes: usize,
-    number_of_edges: usize,
-    generation_duration: u128,
-    ordering_duration: u128,
+    pub number_of_fixed_nodes: usize,
+    pub number_of_free_nodes: usize,
+    pub number_of_edges: usize,
+    pub generation_duration: u128,
+    pub ordering_duration: u128,
 }
 
 pub struct Application {}
@@ -26,7 +26,7 @@ impl Application {
         Application {}
     }
 
-    pub fn run_benchmark_for_20_million_edges(&self) -> Result<(), Error> {
+    pub fn run_benchmark_for_20_million_edges(&self) -> Result<Vec<BenchmarkStats>, Error> {
         let file = File::create("benchmark_20_million_edges.txt")?;
         let mut file = LineWriter::new(file);
 
@@ -63,10 +63,10 @@ impl Application {
         benchmark_stats.push(self.run_test_on_randomly_generated_graph(4_000_000, 4_000_000, 20_000_000, &mut file)?);
         benchmark_stats.push(self.run_test_on_randomly_generated_graph(5_000_000, 5_000_000, 20_000_000, &mut file)?);
 
-        Ok(())
+        Ok(benchmark_stats)
     }
 
-    pub fn run_benchmark_for_1_million_fixed_and_free_nodes(&self) -> Result<(), Error> {
+    pub fn run_benchmark_for_1_million_fixed_and_free_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
         let file = File::create("benchmark_1_million_fixed_and_free_nodes.txt")?;
         let mut file = LineWriter::new(file);
 
@@ -95,7 +95,7 @@ impl Application {
         benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 200_000_000, &mut file)?);
         benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 250_000_000, &mut file)?);
 
-        Ok(())
+        Ok(benchmark_stats)
     }
 
     pub fn run(&self) -> Result<(), Error> {
