@@ -1,7 +1,7 @@
-use pace::{application::Application, error::Error};
+use pace::application::Application;
 
-fn main() -> Result<(), Error>{
+fn main(){
     let application = Application::new();
 
-    application.run()
+    application.run_tests_on_tiny_test_set().unwrap();
 }
