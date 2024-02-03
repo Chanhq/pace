@@ -66,9 +66,6 @@ impl Application {
     }
 
     pub fn run_benchmark_for_1_million_fixed_and_free_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
-        let file = File::create("benchmark_1_million_fixed_and_free_nodes.txt")?;
-        let mut file = LineWriter::new(file);
-
         let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
 
         println!("----- Starting benchmark for 1 million fixed nodes, 1 millon free nodes and different number of edges -------------------------------------------------");
