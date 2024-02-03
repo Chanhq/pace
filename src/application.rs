@@ -11,6 +11,14 @@ use crate::{
     graph_builder::GraphBuilder,
 };
 
+pub struct BenchmarkStats {
+    number_of_fixed_nodes: usize,
+    number_of_free_nodes: usize,
+    number_of_edges: usize,
+    generation_duration: u128,
+    ordering_duration: u128,
+}
+
 pub struct Application {}
 
 impl Application {
@@ -22,36 +30,38 @@ impl Application {
         let file = File::create("benchmark_20_million_edges.txt")?;
         let mut file = LineWriter::new(file);
 
+        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
+
         println!("----- Starting benchmark for 20 million edges and different number of nodes -------------------------------------------------");
 
-        self.run_test_on_randomly_generated_graph(5_000, 5_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(10_000, 10_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(15_000, 15_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(20_000, 20_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(30_000, 30_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(40_000, 40_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(50_000, 50_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(60_000, 60_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(70_000, 70_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(80_000, 80_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(90_000, 90_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(100_000, 100_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(150_000, 150_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(200_000, 200_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(250_000, 250_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(300_000, 300_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(400_000, 400_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(500_000, 500_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(750_000, 750_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_250_000, 1_250_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_500_000, 1_500_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(2_000_000, 2_000_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(2_500_000, 2_500_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(3_000_000, 3_000_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(3_500_000, 3_500_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(4_000_000, 4_000_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(5_000_000, 5_000_000, 20_000_000, &mut file)?;
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(5_000, 5_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(10_000, 10_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(15_000, 15_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(20_000, 20_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(30_000, 30_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(40_000, 40_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(50_000, 50_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(60_000, 60_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(70_000, 70_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(80_000, 80_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(90_000, 90_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(100_000, 100_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(150_000, 150_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(200_000, 200_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(250_000, 250_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(300_000, 300_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(400_000, 400_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(500_000, 500_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(750_000, 750_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_250_000, 1_250_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_500_000, 1_500_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(2_000_000, 2_000_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(2_500_000, 2_500_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(3_000_000, 3_000_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(3_500_000, 3_500_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(4_000_000, 4_000_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(5_000_000, 5_000_000, 20_000_000, &mut file)?);
 
         Ok(())
     }
@@ -60,48 +70,30 @@ impl Application {
         let file = File::create("benchmark_1_million_fixed_and_free_nodes.txt")?;
         let mut file = LineWriter::new(file);
 
+        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
+
         println!("----- Starting benchmark for 1 million fixed nodes, 1 millon free nodes and different number of edges -------------------------------------------------");
 
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 100_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 500_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 1_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 2_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 3_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 4_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 5_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 10_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 30_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 40_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 50_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 60_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 70_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 80_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 90_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 100_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 150_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 200_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 250_000_000, &mut file)?;
-
-        Ok(())
-    }
-
-    pub fn run_test_on_randomly_generated_graphs(&self) -> Result<(), Error> {
-        let file = File::create("benchmark_results.txt")?;
-        let mut file = LineWriter::new(file);
-
-        self.run_test_on_randomly_generated_graph(5_000, 5_000, 2_500_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(10_000, 10_000, 10_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(50_000, 50_000, 10_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(100_000, 10_000, 10_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(500_000, 500_000, 10_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 10_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 30_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 50_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 100_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 250_000_000, &mut file)?;
-        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 500_000_000, &mut file)?;
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 100_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 500_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 1_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 2_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 3_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 4_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 5_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 10_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 30_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 40_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 50_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 60_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 70_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 80_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 90_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 100_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 150_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 200_000_000, &mut file)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 250_000_000, &mut file)?);
 
         Ok(())
     }
@@ -168,7 +160,7 @@ impl Application {
         number_of_free_nodes: usize,
         number_of_edges: usize,
         file: &mut LineWriter<File>,
-    ) -> Result<(), Error> {
+    ) -> Result<BenchmarkStats, Error> {
         let begin = Instant::now();
         println!(
             "Generating graph with {} fixed nodes, {} free nodes and {} edges.",
@@ -199,7 +191,13 @@ impl Application {
             ordering_elapsed
         )?;
 
-        Ok(())
+        Ok(BenchmarkStats {
+            number_of_fixed_nodes,
+            number_of_free_nodes,
+            number_of_edges,
+            generation_duration:  generation_elapsed,
+            ordering_duration: ordering_elapsed,
+        })
     }
 
     fn run_test_on_graph(
