@@ -1,7 +1,5 @@
 use std::{
-    fs::{self, File},
-    io::{LineWriter, Write},
-    time::Instant,
+    fs::{self, File}, io::Write, time::Instant
 };
 
 use serde::{Deserialize, Serialize};
