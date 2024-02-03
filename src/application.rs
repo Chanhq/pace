@@ -1,13 +1,12 @@
 use std::{
     fs::{self, File},
     io::{LineWriter, Write},
-    path,
     time::Instant,
 };
 
 use crate::{
     error::Error,
-    graph::{self, Graph},
+    graph::Graph,
     graph_builder::GraphBuilder,
 };
 
