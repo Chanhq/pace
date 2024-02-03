@@ -73,6 +73,7 @@ impl Application {
         self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000, &mut file)?;
         self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 30_000_000, &mut file)?;
         self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 40_000_000, &mut file)?;
+        self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 50_000_000, &mut file)?;
         self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 60_000_000, &mut file)?;
         self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 70_000_000, &mut file)?;
         self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 80_000_000, &mut file)?;
