@@ -89,7 +89,21 @@ impl Graph {
     }
 
     pub fn compute_number_of_crossings_with_default_ordering(&self) -> Result<usize, Error> {
-        self.compute_number_of_crossings_for_ordering(&(self.number_of_fixed_nodes..self.number_of_free_nodes).collect())
+        let mut number_of_crossings = 0;
+
+        for fixed_node_index1 in 0..self.number_of_fixed_nodes {
+            for fixed_node_index2 in (fixed_node_index1 + 1)..self.number_of_fixed_nodes {
+                for neighbor_index1 in self.adjacency_list.get(fixed_node_index1).expect("Index must exist") {
+                    for neighbor_index2 in self.adjacency_list.get(fixed_node_index2).expect("Index must exist") {
+                        if neighbor_index2 < neighbor_index1 {
+                            number_of_crossings += 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        Ok(number_of_crossings)
     }
 
     pub fn compute_number_of_crossings_for_ordering(&self, ordering :&Vec<usize>) -> Result<usize, Error> {
@@ -165,7 +179,7 @@ impl Graph {
             .iter()
             .enumerate()
             .filter(|(_, d)| **d == 0)
-            .for_each(|(i, _)| q.push_front(i));
+            .for_each(|(i, _)| q.push_back(i));
 
         let mut sorted_nodes: Vec<usize> = Vec::new();
 
