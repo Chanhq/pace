@@ -1,0 +1,168 @@
+#fixed: 5000
+#free: 5000
+#edges: 20000000
+generation: 6690 ms
+ordering: 399 ms
+
+#fixed: 10000
+#free: 10000
+#edges: 20000000
+generation: 3577 ms
+ordering: 431 ms
+
+#fixed: 15000
+#free: 15000
+#edges: 20000000
+generation: 3044 ms
+ordering: 553 ms
+
+#fixed: 20000
+#free: 20000
+#edges: 20000000
+generation: 3926 ms
+ordering: 467 ms
+
+#fixed: 30000
+#free: 30000
+#edges: 20000000
+generation: 3357 ms
+ordering: 513 ms
+
+#fixed: 40000
+#free: 40000
+#edges: 20000000
+generation: 3709 ms
+ordering: 547 ms
+
+#fixed: 50000
+#free: 50000
+#edges: 20000000
+generation: 3495 ms
+ordering: 536 ms
+
+#fixed: 60000
+#free: 60000
+#edges: 20000000
+generation: 3702 ms
+ordering: 617 ms
+
+#fixed: 70000
+#free: 70000
+#edges: 20000000
+generation: 4266 ms
+ordering: 662 ms
+
+#fixed: 80000
+#free: 80000
+#edges: 20000000
+generation: 4187 ms
+ordering: 674 ms
+
+#fixed: 90000
+#free: 90000
+#edges: 20000000
+generation: 4210 ms
+ordering: 678 ms
+
+#fixed: 100000
+#free: 100000
+#edges: 20000000
+generation: 4026 ms
+ordering: 640 ms
+
+#fixed: 150000
+#free: 150000
+#edges: 20000000
+generation: 4549 ms
+ordering: 772 ms
+
+#fixed: 200000
+#free: 200000
+#edges: 20000000
+generation: 4674 ms
+ordering: 786 ms
+
+#fixed: 250000
+#free: 250000
+#edges: 20000000
+generation: 5222 ms
+ordering: 1007 ms
+
+#fixed: 300000
+#free: 300000
+#edges: 20000000
+generation: 5022 ms
+ordering: 966 ms
+
+#fixed: 400000
+#free: 400000
+#edges: 20000000
+generation: 5020 ms
+ordering: 1054 ms
+
+#fixed: 500000
+#free: 500000
+#edges: 20000000
+generation: 4935 ms
+ordering: 1299 ms
+
+#fixed: 750000
+#free: 750000
+#edges: 20000000
+generation: 5145 ms
+ordering: 1558 ms
+
+#fixed: 1000000
+#free: 1000000
+#edges: 20000000
+generation: 5218 ms
+ordering: 1888 ms
+
+#fixed: 1250000
+#free: 1250000
+#edges: 20000000
+generation: 5265 ms
+ordering: 2160 ms
+
+#fixed: 1500000
+#free: 1500000
+#edges: 20000000
+generation: 4751 ms
+ordering: 2210 ms
+
+#fixed: 2000000
+#free: 2000000
+#edges: 20000000
+generation: 4947 ms
+ordering: 2856 ms
+
+#fixed: 2500000
+#free: 2500000
+#edges: 20000000
+generation: 5151 ms
+ordering: 3262 ms
+
+#fixed: 3000000
+#free: 3000000
+#edges: 20000000
+generation: 5076 ms
+ordering: 3515 ms
+
+#fixed: 3500000
+#free: 3500000
+#edges: 20000000
+generation: 5126 ms
+ordering: 3637 ms
+
+#fixed: 4000000
+#free: 4000000
+#edges: 20000000
+generation: 4976 ms
+ordering: 4093 ms
+
+#fixed: 5000000
+#free: 5000000
+#edges: 20000000
+generation: 5534 ms
+ordering: 4615 ms
+

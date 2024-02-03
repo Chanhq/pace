@@ -81,6 +81,7 @@ impl GraphBuilder {
     }
 }
 
+// PRIVATE METHODS ------------------------------------------------------------------
 impl GraphBuilder {
     fn parse_edge_line(line: &str) -> Option<(usize, usize)> {
         let words: Vec<&str> = line.split(' ').collect();
