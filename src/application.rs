@@ -69,14 +69,14 @@ impl Application {
                 .collect();
             let number_of_crossings = graph.compute_number_of_crossings_for_ordering(&ordering)?;
             if number_of_crossings != 0 {
-                number_of_graphs_with_crossings += 1;
                 crossing_counts.push(number_of_crossings);
             }
         }
 
         println!(
-            "{} of 5000 graphs had some crossings after solving.",
-            number_of_graphs_with_crossings
+            "{} of {} graphs had some crossings after solving.",
+            crossing_counts.len(),
+            number_of_test_cases,
         );
         println!("Crossings found: {:?}", crossing_counts);
 
