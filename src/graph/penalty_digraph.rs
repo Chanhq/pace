@@ -21,7 +21,7 @@ impl PenaltyDigraph {
 
     pub fn from_graph(graph: &Graph) -> PenaltyDigraph {
         let mut penalty_digraph = PenaltyDigraph::new(graph.number_of_free_nodes);
-        
+
         for u in graph.number_of_fixed_nodes..graph.number_of_nodes {
             for v in u + 1..graph.number_of_nodes {
                 let mut c_uv: isize = 0;
@@ -82,14 +82,14 @@ impl PenaltyDigraph {
     }
 
     pub fn sort_fas(&self) -> Vec<usize> {
-        let mut ordering: Vec<usize> = Vec::new();
+        let mut feedback_arc_set: Vec<usize> = Vec::new();
         for u in 0..self.number_of_nodes {
             let mut val: isize = 0;
             let mut min: isize = 0;
             let mut loc: usize = u;
 
             for j in (0..loc).rev() {
-                let v = ordering.get(j).expect("Index exists");
+                let v = feedback_arc_set.get(j).expect("Index exists");
                 if self.edge_exists(u, *v) {
                     val += 1;
                 }
@@ -102,9 +102,9 @@ impl PenaltyDigraph {
                     loc = j;
                 }
             }
-            ordering.insert(loc, u);
+            feedback_arc_set.insert(loc, u);
         }
 
-        ordering
+        feedback_arc_set
     }
 }
