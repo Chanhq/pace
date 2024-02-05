@@ -147,7 +147,7 @@ impl Application {
         println!(" done! ({} ms)", generation_elapsed);
 
         let begin = Instant::now();
-        print!("Computing cross table...");
+        print!("Computing penalty digraph...");
         io::stdout().flush()?;
         let penalty_digraph = PenaltyDigraph::from_graph(&graph);
         println!(" done! ({} ms)", begin.elapsed().as_millis());
@@ -176,7 +176,7 @@ impl Application {
         should_compute_number_of_crossings: bool,
     ) -> Result<(), Error> {
         let begin = Instant::now();
-        print!("Computing cross table...");
+        print!("Computing penalty digraph...");
         io::stdout().flush()?;
         let penalty_digraph = PenaltyDigraph::from_graph(&graph);
         println!(" done! ({} ms)", begin.elapsed().as_millis());

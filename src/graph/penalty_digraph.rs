@@ -21,33 +21,18 @@ impl PenaltyDigraph {
 
     pub fn from_graph(graph: &Graph) -> PenaltyDigraph {
         let mut penalty_digraph = PenaltyDigraph::new(graph.number_of_free_nodes);
-
+        
         for u in graph.number_of_fixed_nodes..graph.number_of_nodes {
-            let mut neighbors_u: Vec<&usize> = graph
-                .adjacency_list
-                .get(u)
-                .expect("Must exist")
-                .iter()
-                .collect();
-            neighbors_u.sort();
             for v in u + 1..graph.number_of_nodes {
                 let mut c_uv: isize = 0;
                 let mut c_vu: isize = 0;
                 let mut scan;
                 let degree_v = graph.adjacency_list.get(v).expect("Must exist").len() as isize;
 
-                let mut neighbors_v: Vec<&usize> = graph
-                    .adjacency_list
-                    .get(v)
-                    .expect("Must exist")
-                    .iter()
-                    .collect();
-                neighbors_v.sort();
-
-                let mut adj_u_iter = neighbors_u.iter();
+                let mut adj_u_iter = graph.adjacency_list.get(u).unwrap().iter();
                 let mut adj_u = adj_u_iter.next();
 
-                let mut adj_v_iter = neighbors_v.iter();
+                let mut adj_v_iter = graph.adjacency_list.get(v).unwrap().iter();
                 let mut adj_v = adj_v_iter.next();
 
                 while adj_u.is_some() {
@@ -80,7 +65,6 @@ impl PenaltyDigraph {
 
 // PUBLIC METHODS
 impl PenaltyDigraph {
-
     fn add_crossings(&mut self, u: usize, v: usize, c_uv: isize, c_vu: isize) {
         if c_vu < c_uv {
             self.add_edge(u, v);

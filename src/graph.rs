@@ -1,6 +1,6 @@
 pub mod penalty_digraph;
 
-use std::{collections::{HashMap, HashSet}, iter};
+use std::{collections::{BTreeSet, HashMap, HashSet}, iter};
 
 use crate::error::Error;
 
@@ -10,7 +10,7 @@ pub struct Graph {
     number_of_fixed_nodes: usize,
     number_of_free_nodes: usize,
     number_of_edges: usize,
-    adjacency_list: Vec<HashSet<usize>>,
+    adjacency_list: Vec<BTreeSet<usize>>,
 }
 // GETTERS ---------------------------------------------------------------------------------
 impl Graph {
@@ -40,7 +40,7 @@ impl Graph {
             number_of_fixed_nodes,
             number_of_free_nodes,
             number_of_edges: 0,
-            adjacency_list: iter::repeat(HashSet::new()).take(number_of_nodes).collect(),
+            adjacency_list: iter::repeat(BTreeSet::new()).take(number_of_nodes).collect(),
         }
     }
 
