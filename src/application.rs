@@ -1,6 +1,5 @@
 use std::{
-    cmp::Ordering,
-    fs::{self, File},
+    fs::{self},
     io::{self, Write},
     time::Instant,
 };
@@ -10,8 +9,7 @@ use serde::{Deserialize, Serialize};
 use crate::{
     error::Error,
     graph::{
-        self,
-        penalty_digraph::{self, PenaltyDigraph},
+        penalty_digraph::PenaltyDigraph,
         Graph,
     },
     graph_builder::GraphBuilder,

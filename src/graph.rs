@@ -1,15 +1,8 @@
 pub mod penalty_digraph;
 
-use core::panic;
-use std::{
-    collections::{HashMap, HashSet, VecDeque},
-    iter,
-};
-
+use std::{collections::{HashMap, HashSet}, iter};
 
 use crate::error::Error;
-
-use self::penalty_digraph::PenaltyDigraph;
 
 #[derive(Debug)]
 pub struct Graph {
@@ -51,11 +44,7 @@ impl Graph {
         }
     }
 
-    pub fn add_edge(
-        &mut self,
-        node_index1: usize,
-        node_index2: usize,
-    ) -> Result<bool, Error> {
+    pub fn add_edge(&mut self, node_index1: usize, node_index2: usize) -> Result<bool, Error> {
         if node_index1 >= self.number_of_nodes || node_index2 >= self.number_of_nodes {
             return Err(Error::IndexError("Index out of bounds".to_string()));
         }
@@ -170,28 +159,4 @@ impl Graph {
 
         Ok(number_of_crossings)
     }
-}
-
-// PRIVATE FUNCTIONS ---------------------------------------------------------------------------------
-impl Graph {
-    fn check_fixed_node_index(&self, index: usize) -> Result<(), Error> {
-        if (0..self.number_of_fixed_nodes).contains(&index) {
-            Ok(())
-        } else {
-            Err(Error::IndexError(format!(
-                "Fixed index {index} is out of bounds"
-            )))
-        }
-    }
-
-    fn check_free_node_index(&self, index: usize) -> Result<(), Error> {
-        if (self.number_of_fixed_nodes..self.number_of_nodes).contains(&index) {
-            Ok(())
-        } else {
-            Err(Error::IndexError(format!(
-                "Free index {index} is out of bounds"
-            )))
-        }
-    }
-
 }

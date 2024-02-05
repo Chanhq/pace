@@ -33,7 +33,7 @@ impl PenaltyDigraph {
             for v in u + 1..graph.number_of_nodes {
                 let mut c_uv: isize = 0;
                 let mut c_vu: isize = 0;
-                let mut scan = 0;
+                let mut scan;
                 let degree_v = graph.adjacency_list.get(v).expect("Must exist").len() as isize;
 
                 let mut neighbors_v: Vec<&usize> = graph
