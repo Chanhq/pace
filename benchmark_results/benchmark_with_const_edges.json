@@ -1,0 +1,482 @@
+[
+  {
+    "number_of_fixed_nodes": 500,
+    "number_of_free_nodes": 500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 20,
+    "reduction_elapsed": 303,
+    "ordering_elapsed": 3
+  },
+  {
+    "number_of_fixed_nodes": 1000,
+    "number_of_free_nodes": 1000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 15,
+    "reduction_elapsed": 625,
+    "ordering_elapsed": 17
+  },
+  {
+    "number_of_fixed_nodes": 1500,
+    "number_of_free_nodes": 1500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 15,
+    "reduction_elapsed": 938,
+    "ordering_elapsed": 40
+  },
+  {
+    "number_of_fixed_nodes": 2000,
+    "number_of_free_nodes": 2000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 14,
+    "reduction_elapsed": 1280,
+    "ordering_elapsed": 77
+  },
+  {
+    "number_of_fixed_nodes": 2500,
+    "number_of_free_nodes": 2500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 14,
+    "reduction_elapsed": 1645,
+    "ordering_elapsed": 127
+  },
+  {
+    "number_of_fixed_nodes": 3000,
+    "number_of_free_nodes": 3000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 13,
+    "reduction_elapsed": 2074,
+    "ordering_elapsed": 246
+  },
+  {
+    "number_of_fixed_nodes": 3500,
+    "number_of_free_nodes": 3500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 16,
+    "reduction_elapsed": 2610,
+    "ordering_elapsed": 280
+  },
+  {
+    "number_of_fixed_nodes": 4000,
+    "number_of_free_nodes": 4000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 3004,
+    "ordering_elapsed": 401
+  },
+  {
+    "number_of_fixed_nodes": 4500,
+    "number_of_free_nodes": 4500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 14,
+    "reduction_elapsed": 3541,
+    "ordering_elapsed": 660
+  },
+  {
+    "number_of_fixed_nodes": 5000,
+    "number_of_free_nodes": 5000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 13,
+    "reduction_elapsed": 4395,
+    "ordering_elapsed": 746
+  },
+  {
+    "number_of_fixed_nodes": 5500,
+    "number_of_free_nodes": 5500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 4747,
+    "ordering_elapsed": 938
+  },
+  {
+    "number_of_fixed_nodes": 6000,
+    "number_of_free_nodes": 6000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 5373,
+    "ordering_elapsed": 1164
+  },
+  {
+    "number_of_fixed_nodes": 6500,
+    "number_of_free_nodes": 6500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 6036,
+    "ordering_elapsed": 1431
+  },
+  {
+    "number_of_fixed_nodes": 7000,
+    "number_of_free_nodes": 7000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 6771,
+    "ordering_elapsed": 1760
+  },
+  {
+    "number_of_fixed_nodes": 7500,
+    "number_of_free_nodes": 7500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 7747,
+    "ordering_elapsed": 2271
+  },
+  {
+    "number_of_fixed_nodes": 8000,
+    "number_of_free_nodes": 8000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 8837,
+    "ordering_elapsed": 2693
+  },
+  {
+    "number_of_fixed_nodes": 8500,
+    "number_of_free_nodes": 8500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 14,
+    "reduction_elapsed": 9261,
+    "ordering_elapsed": 2792
+  },
+  {
+    "number_of_fixed_nodes": 9000,
+    "number_of_free_nodes": 9000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 9481,
+    "ordering_elapsed": 3218
+  },
+  {
+    "number_of_fixed_nodes": 9500,
+    "number_of_free_nodes": 9500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 16,
+    "reduction_elapsed": 10278,
+    "ordering_elapsed": 3953
+  },
+  {
+    "number_of_fixed_nodes": 10000,
+    "number_of_free_nodes": 10000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 12125,
+    "ordering_elapsed": 4170
+  },
+  {
+    "number_of_fixed_nodes": 10500,
+    "number_of_free_nodes": 10500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 12042,
+    "ordering_elapsed": 4717
+  },
+  {
+    "number_of_fixed_nodes": 11000,
+    "number_of_free_nodes": 11000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 13295,
+    "ordering_elapsed": 5398
+  },
+  {
+    "number_of_fixed_nodes": 11500,
+    "number_of_free_nodes": 11500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 13887,
+    "ordering_elapsed": 5957
+  },
+  {
+    "number_of_fixed_nodes": 12000,
+    "number_of_free_nodes": 12000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 15141,
+    "ordering_elapsed": 6545
+  },
+  {
+    "number_of_fixed_nodes": 12500,
+    "number_of_free_nodes": 12500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 15071,
+    "ordering_elapsed": 7308
+  },
+  {
+    "number_of_fixed_nodes": 13000,
+    "number_of_free_nodes": 13000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 15906,
+    "ordering_elapsed": 7966
+  },
+  {
+    "number_of_fixed_nodes": 13500,
+    "number_of_free_nodes": 13500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 17819,
+    "ordering_elapsed": 8721
+  },
+  {
+    "number_of_fixed_nodes": 14000,
+    "number_of_free_nodes": 14000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 18283,
+    "ordering_elapsed": 9511
+  },
+  {
+    "number_of_fixed_nodes": 14500,
+    "number_of_free_nodes": 14500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 19391,
+    "ordering_elapsed": 10328
+  },
+  {
+    "number_of_fixed_nodes": 15000,
+    "number_of_free_nodes": 15000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 21006,
+    "ordering_elapsed": 11424
+  },
+  {
+    "number_of_fixed_nodes": 15500,
+    "number_of_free_nodes": 15500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 22860,
+    "ordering_elapsed": 12498
+  },
+  {
+    "number_of_fixed_nodes": 16000,
+    "number_of_free_nodes": 16000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 25045,
+    "ordering_elapsed": 13578
+  },
+  {
+    "number_of_fixed_nodes": 16500,
+    "number_of_free_nodes": 16500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 26694,
+    "ordering_elapsed": 14675
+  },
+  {
+    "number_of_fixed_nodes": 17000,
+    "number_of_free_nodes": 17000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 28017,
+    "ordering_elapsed": 16127
+  },
+  {
+    "number_of_fixed_nodes": 17500,
+    "number_of_free_nodes": 17500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 30231,
+    "ordering_elapsed": 17572
+  },
+  {
+    "number_of_fixed_nodes": 18000,
+    "number_of_free_nodes": 18000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 33052,
+    "ordering_elapsed": 18948
+  },
+  {
+    "number_of_fixed_nodes": 18500,
+    "number_of_free_nodes": 18500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 35197,
+    "ordering_elapsed": 20120
+  },
+  {
+    "number_of_fixed_nodes": 19000,
+    "number_of_free_nodes": 19000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 35789,
+    "ordering_elapsed": 21400
+  },
+  {
+    "number_of_fixed_nodes": 19500,
+    "number_of_free_nodes": 19500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 38024,
+    "ordering_elapsed": 22912
+  },
+  {
+    "number_of_fixed_nodes": 20000,
+    "number_of_free_nodes": 20000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 39100,
+    "ordering_elapsed": 24722
+  },
+  {
+    "number_of_fixed_nodes": 20500,
+    "number_of_free_nodes": 20500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 41585,
+    "ordering_elapsed": 25938
+  },
+  {
+    "number_of_fixed_nodes": 21000,
+    "number_of_free_nodes": 21000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 46447,
+    "ordering_elapsed": 28186
+  },
+  {
+    "number_of_fixed_nodes": 21500,
+    "number_of_free_nodes": 21500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 45909,
+    "ordering_elapsed": 29957
+  },
+  {
+    "number_of_fixed_nodes": 22000,
+    "number_of_free_nodes": 22000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 50017,
+    "ordering_elapsed": 31213
+  },
+  {
+    "number_of_fixed_nodes": 22500,
+    "number_of_free_nodes": 22500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 51091,
+    "ordering_elapsed": 33579
+  },
+  {
+    "number_of_fixed_nodes": 23000,
+    "number_of_free_nodes": 23000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 52606,
+    "ordering_elapsed": 35243
+  },
+  {
+    "number_of_fixed_nodes": 23500,
+    "number_of_free_nodes": 23500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 62743,
+    "ordering_elapsed": 44977
+  },
+  {
+    "number_of_fixed_nodes": 24000,
+    "number_of_free_nodes": 24000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 12,
+    "reduction_elapsed": 80310,
+    "ordering_elapsed": 55139
+  },
+  {
+    "number_of_fixed_nodes": 24500,
+    "number_of_free_nodes": 24500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 81301,
+    "ordering_elapsed": 59010
+  },
+  {
+    "number_of_fixed_nodes": 25000,
+    "number_of_free_nodes": 25000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 85422,
+    "ordering_elapsed": 60619
+  },
+  {
+    "number_of_fixed_nodes": 25500,
+    "number_of_free_nodes": 25500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 11,
+    "reduction_elapsed": 89535,
+    "ordering_elapsed": 64791
+  },
+  {
+    "number_of_fixed_nodes": 26000,
+    "number_of_free_nodes": 26000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 15,
+    "reduction_elapsed": 91073,
+    "ordering_elapsed": 58643
+  },
+  {
+    "number_of_fixed_nodes": 26500,
+    "number_of_free_nodes": 26500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 83737,
+    "ordering_elapsed": 62083
+  },
+  {
+    "number_of_fixed_nodes": 27000,
+    "number_of_free_nodes": 27000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 10,
+    "reduction_elapsed": 86416,
+    "ordering_elapsed": 64765
+  },
+  {
+    "number_of_fixed_nodes": 27500,
+    "number_of_free_nodes": 27500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 9,
+    "reduction_elapsed": 91193,
+    "ordering_elapsed": 60527
+  },
+  {
+    "number_of_fixed_nodes": 28000,
+    "number_of_free_nodes": 28000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 88852,
+    "ordering_elapsed": 67050
+  },
+  {
+    "number_of_fixed_nodes": 28500,
+    "number_of_free_nodes": 28500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 94299,
+    "ordering_elapsed": 68367
+  },
+  {
+    "number_of_fixed_nodes": 29000,
+    "number_of_free_nodes": 29000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 95136,
+    "ordering_elapsed": 71236
+  },
+  {
+    "number_of_fixed_nodes": 29500,
+    "number_of_free_nodes": 29500,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 94158,
+    "ordering_elapsed": 71302
+  },
+  {
+    "number_of_fixed_nodes": 30000,
+    "number_of_free_nodes": 30000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 8,
+    "reduction_elapsed": 96045,
+    "ordering_elapsed": 76777
+  }
+]
