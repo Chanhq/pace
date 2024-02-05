@@ -8,10 +8,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::{
     error::Error,
-    graph::{
-        penalty_digraph::PenaltyDigraph,
-        Graph,
-    },
+    graph::{penalty_digraph::PenaltyDigraph, Graph},
     graph_builder::GraphBuilder,
 };
 
@@ -20,8 +17,9 @@ pub struct BenchmarkStats {
     pub number_of_fixed_nodes: usize,
     pub number_of_free_nodes: usize,
     pub number_of_edges: usize,
-    pub generation_duration: u128,
-    pub ordering_duration: u128,
+    pub loading_elapsed: u128,
+    pub reduction_elapsed: u128,
+    pub ordering_elapsed: u128,
 }
 
 pub struct Application {}
@@ -32,6 +30,7 @@ impl Application {
     }
 
     pub fn run_small_tests(&self) -> Result<(), Error> {
+        self.run_test_on_randomly_generated_graph(50000, 50000, 10000)?;
         self.run_test_on_randomly_generated_graph(50, 50, 200)?;
         self.run_test_on_randomly_generated_graph(100, 100, 2000)?;
         self.run_test_on_randomly_generated_graph(200, 200, 4000)?;
@@ -105,25 +104,26 @@ impl Application {
         filename: &str,
         should_print_ordering: bool,
         should_compute_number_of_crossings: bool,
-    ) -> Result<(), Error> {
+    ) -> Result<BenchmarkStats, Error> {
         print!("Loading graph from file '{}'...", filename);
         io::stdout().flush()?;
         let begin = Instant::now();
         let graph = GraphBuilder::build_graph_from_file(filename)?;
-        println!(" done! ({} ms)", begin.elapsed().as_millis());
+        let loading_elapsed = begin.elapsed().as_millis();
+        println!(" done! ({} ms)", loading_elapsed);
         println!(
             "The graph has {} fixed nodes, {} free nodes and {} edges.",
             graph.number_of_fixed_nodes(),
             graph.number_of_free_nodes(),
             graph.number_of_edges()
         );
+
         self.run_test_on_graph(
             &graph,
+            loading_elapsed,
             should_print_ordering,
             should_compute_number_of_crossings,
-        )?;
-
-        Ok(())
+        )
     }
 
     fn run_test_on_randomly_generated_graph(
@@ -143,43 +143,25 @@ impl Application {
             number_of_free_nodes,
             number_of_edges,
         )?;
-        let generation_elapsed = begin.elapsed().as_millis();
-        println!(" done! ({} ms)", generation_elapsed);
+        let loading_elapsed = begin.elapsed().as_millis();
+        println!(" done! ({} ms)", loading_elapsed);
 
-        let begin = Instant::now();
-        print!("Computing penalty digraph...");
-        io::stdout().flush()?;
-        let penalty_digraph = PenaltyDigraph::from_graph(&graph);
-        println!(" done! ({} ms)", begin.elapsed().as_millis());
-
-        let begin = Instant::now();
-        print!("Computing ordering...");
-        io::stdout().flush()?;
-        penalty_digraph.sort_fas();
-        let ordering_elapsed = begin.elapsed().as_millis();
-        println!(" done! ({} ms)", generation_elapsed);
-        println!("");
-
-        Ok(BenchmarkStats {
-            number_of_fixed_nodes,
-            number_of_free_nodes,
-            number_of_edges,
-            generation_duration: generation_elapsed,
-            ordering_duration: ordering_elapsed,
-        })
+        self.run_test_on_graph(&graph, loading_elapsed, false, false)
     }
 
     fn run_test_on_graph(
         &self,
         graph: &Graph,
+        loading_elapsed: u128,
         should_print_ordering: bool,
         should_compute_number_of_crossings: bool,
-    ) -> Result<(), Error> {
+    ) -> Result<BenchmarkStats, Error> {
         let begin = Instant::now();
         print!("Computing penalty digraph...");
         io::stdout().flush()?;
         let penalty_digraph = PenaltyDigraph::from_graph(&graph);
-        println!(" done! ({} ms)", begin.elapsed().as_millis());
+        let reduction_elapsed = begin.elapsed().as_millis();
+        println!(" done! ({} ms)", reduction_elapsed);
 
         if should_compute_number_of_crossings {
             let begin = Instant::now();
@@ -195,10 +177,11 @@ impl Application {
         io::stdout().flush()?;
         let ordering: Vec<usize> = penalty_digraph
             .sort_fas()
-            .iter()
+            .into_iter()
             .map(|e| e + graph.number_of_fixed_nodes())
             .collect();
-        println!(" done! ({} ms)", begin.elapsed().as_millis());
+        let ordering_elapsed = begin.elapsed().as_millis();
+        println!(" done! ({} ms)", ordering_elapsed);
 
         if should_print_ordering {
             let ordering_with_actual_node_name: Vec<usize> =
@@ -220,7 +203,14 @@ impl Application {
 
         println!("");
 
-        Ok(())
+        Ok(BenchmarkStats {
+            number_of_fixed_nodes: graph.number_of_fixed_nodes(),
+            number_of_free_nodes: graph.number_of_free_nodes(),
+            number_of_edges: graph.number_of_edges(),
+            loading_elapsed,
+            reduction_elapsed,
+            ordering_elapsed,
+        })
     }
 }
 
