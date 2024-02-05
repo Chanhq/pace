@@ -1,5 +1,5 @@
 use std::{
-    fs::{self},
+    fs::{self, File},
     io::{self, Write},
     time::Instant,
 };
@@ -29,18 +29,68 @@ impl Application {
         Application {}
     }
 
-    pub fn run_small_tests(&self) -> Result<(), Error> {
-        self.run_test_on_randomly_generated_graph(50000, 50000, 10000)?;
-        self.run_test_on_randomly_generated_graph(50, 50, 200)?;
-        self.run_test_on_randomly_generated_graph(100, 100, 2000)?;
-        self.run_test_on_randomly_generated_graph(200, 200, 4000)?;
-        self.run_test_on_randomly_generated_graph(500, 500, 10000)?;
-        self.run_test_on_randomly_generated_graph(1000, 1000, 50000)?;
-        self.run_test_on_randomly_generated_graph(2000, 2000, 100000)?;
-        self.run_test_on_randomly_generated_graph(5000, 5000, 250000)?;
-        self.run_test_on_randomly_generated_graph(10000, 10000, 1000000)?;
+    pub fn run_tests_with_same_edges(&self) -> Result<Vec<BenchmarkStats>, Error> {
+        let number_of_edges = 100_000;
+        let node_step_size = 500;
+        let max_number_of_nodes = 30_000;
 
-        Ok(())
+        println!("----- Run tests on graphs with {number_of_edges} edges --------------------------------------------------");
+        let mut file = File::create("benchmark_results/benchmark_with_const_edges.json")?;
+        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
+
+        file.write(b"[\n")?;
+        for number_of_nodes in (node_step_size..= max_number_of_nodes).step_by(node_step_size) {
+            let benchmark = self.run_test_on_randomly_generated_graph(number_of_nodes, number_of_nodes, number_of_edges)?;
+            let benchmark_json = serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
+            file.write(benchmark_json.as_bytes())?;
+            file.write(b",\n")?;
+            benchmark_stats.push(benchmark);
+        }
+        file.write(b"]")?;
+
+        Ok(benchmark_stats)
+    }
+
+    pub fn run_tests_with_same_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
+        let number_of_nodes = 5_000;
+        let edge_step_size = 10_000;
+        let max_number_of_edges = 2_000_000;
+
+        println!("----- Run tests on graphs with {number_of_nodes} fixed and free nodes --------------------------------------------------");
+        let mut file = File::create("benchmark_results/benchmark_with_const_nodes.json")?;
+        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
+
+        file.write(b"[\n")?;
+        for number_of_edges in (edge_step_size..= max_number_of_edges).step_by(edge_step_size) {
+            let benchmark = self.run_test_on_randomly_generated_graph(number_of_nodes, number_of_nodes, number_of_edges)?;
+            let benchmark_json = serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
+            file.write(benchmark_json.as_bytes())?;
+            file.write(b",\n")?;
+            benchmark_stats.push(benchmark);
+        }
+        file.write(b"]")?;
+
+        Ok(benchmark_stats)
+    }
+
+    pub fn run_small_tests(&self) -> Result<Vec<BenchmarkStats>, Error> {
+        println!("----- Run some random tests --------------------------------------------------");
+        let mut file = File::create("benchmark_results/benchmark_random_tests.json")?;
+        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
+
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(50, 50, 200)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(100, 100, 2000)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(200, 200, 4000)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(500, 500, 10000)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1000, 1000, 50000)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(2000, 2000, 100000)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(5000, 5000, 250000)?);
+        benchmark_stats.push(self.run_test_on_randomly_generated_graph(10000, 10000, 1000000)?);
+
+        let json = serde_json::to_string_pretty(&benchmark_stats).expect("Converted to json.");
+        let _ = file.write_all(json.as_bytes());
+
+        Ok(benchmark_stats)
     }
 
     pub fn run_on_specific_case(
