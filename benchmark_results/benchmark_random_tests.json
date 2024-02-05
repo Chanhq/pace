@@ -1,0 +1,66 @@
+[
+  {
+    "number_of_fixed_nodes": 50,
+    "number_of_free_nodes": 50,
+    "number_of_edges": 200,
+    "loading_elapsed": 0,
+    "reduction_elapsed": 0,
+    "ordering_elapsed": 0
+  },
+  {
+    "number_of_fixed_nodes": 100,
+    "number_of_free_nodes": 100,
+    "number_of_edges": 2000,
+    "loading_elapsed": 0,
+    "reduction_elapsed": 1,
+    "ordering_elapsed": 0
+  },
+  {
+    "number_of_fixed_nodes": 200,
+    "number_of_free_nodes": 200,
+    "number_of_edges": 4000,
+    "loading_elapsed": 0,
+    "reduction_elapsed": 4,
+    "ordering_elapsed": 0
+  },
+  {
+    "number_of_fixed_nodes": 500,
+    "number_of_free_nodes": 500,
+    "number_of_edges": 10000,
+    "loading_elapsed": 0,
+    "reduction_elapsed": 34,
+    "ordering_elapsed": 3
+  },
+  {
+    "number_of_fixed_nodes": 1000,
+    "number_of_free_nodes": 1000,
+    "number_of_edges": 50000,
+    "loading_elapsed": 6,
+    "reduction_elapsed": 313,
+    "ordering_elapsed": 16
+  },
+  {
+    "number_of_fixed_nodes": 2000,
+    "number_of_free_nodes": 2000,
+    "number_of_edges": 100000,
+    "loading_elapsed": 15,
+    "reduction_elapsed": 1303,
+    "ordering_elapsed": 81
+  },
+  {
+    "number_of_fixed_nodes": 5000,
+    "number_of_free_nodes": 5000,
+    "number_of_edges": 250000,
+    "loading_elapsed": 44,
+    "reduction_elapsed": 9609,
+    "ordering_elapsed": 747
+  },
+  {
+    "number_of_fixed_nodes": 10000,
+    "number_of_free_nodes": 10000,
+    "number_of_edges": 1000000,
+    "loading_elapsed": 293,
+    "reduction_elapsed": 111275,
+    "ordering_elapsed": 4796
+  }
+]

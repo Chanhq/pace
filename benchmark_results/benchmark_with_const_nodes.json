@@ -1,0 +1,1602 @@
+[
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 10000,
+  "loading_elapsed": 1,
+  "reduction_elapsed": 924,
+  "ordering_elapsed": 1364
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 20000,
+  "loading_elapsed": 2,
+  "reduction_elapsed": 1622,
+  "ordering_elapsed": 1088
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 30000,
+  "loading_elapsed": 3,
+  "reduction_elapsed": 1872,
+  "ordering_elapsed": 948
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 40000,
+  "loading_elapsed": 4,
+  "reduction_elapsed": 2051,
+  "ordering_elapsed": 862
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 50000,
+  "loading_elapsed": 5,
+  "reduction_elapsed": 2425,
+  "ordering_elapsed": 846
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 60000,
+  "loading_elapsed": 6,
+  "reduction_elapsed": 2843,
+  "ordering_elapsed": 832
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 70000,
+  "loading_elapsed": 8,
+  "reduction_elapsed": 3223,
+  "ordering_elapsed": 839
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 80000,
+  "loading_elapsed": 9,
+  "reduction_elapsed": 3595,
+  "ordering_elapsed": 836
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 90000,
+  "loading_elapsed": 11,
+  "reduction_elapsed": 4098,
+  "ordering_elapsed": 945
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 100000,
+  "loading_elapsed": 14,
+  "reduction_elapsed": 4878,
+  "ordering_elapsed": 868
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 110000,
+  "loading_elapsed": 16,
+  "reduction_elapsed": 4761,
+  "ordering_elapsed": 815
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 120000,
+  "loading_elapsed": 16,
+  "reduction_elapsed": 5521,
+  "ordering_elapsed": 1032
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 130000,
+  "loading_elapsed": 18,
+  "reduction_elapsed": 5614,
+  "ordering_elapsed": 826
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 140000,
+  "loading_elapsed": 19,
+  "reduction_elapsed": 5936,
+  "ordering_elapsed": 840
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 150000,
+  "loading_elapsed": 21,
+  "reduction_elapsed": 6987,
+  "ordering_elapsed": 932
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 160000,
+  "loading_elapsed": 26,
+  "reduction_elapsed": 7388,
+  "ordering_elapsed": 872
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 170000,
+  "loading_elapsed": 28,
+  "reduction_elapsed": 6941,
+  "ordering_elapsed": 821
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 180000,
+  "loading_elapsed": 30,
+  "reduction_elapsed": 7580,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 190000,
+  "loading_elapsed": 29,
+  "reduction_elapsed": 7713,
+  "ordering_elapsed": 857
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 200000,
+  "loading_elapsed": 35,
+  "reduction_elapsed": 8082,
+  "ordering_elapsed": 853
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 210000,
+  "loading_elapsed": 35,
+  "reduction_elapsed": 8406,
+  "ordering_elapsed": 843
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 220000,
+  "loading_elapsed": 40,
+  "reduction_elapsed": 8821,
+  "ordering_elapsed": 828
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 230000,
+  "loading_elapsed": 49,
+  "reduction_elapsed": 9309,
+  "ordering_elapsed": 831
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 240000,
+  "loading_elapsed": 46,
+  "reduction_elapsed": 9642,
+  "ordering_elapsed": 836
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 250000,
+  "loading_elapsed": 47,
+  "reduction_elapsed": 10053,
+  "ordering_elapsed": 821
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 260000,
+  "loading_elapsed": 49,
+  "reduction_elapsed": 10553,
+  "ordering_elapsed": 839
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 270000,
+  "loading_elapsed": 50,
+  "reduction_elapsed": 10945,
+  "ordering_elapsed": 827
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 280000,
+  "loading_elapsed": 54,
+  "reduction_elapsed": 11374,
+  "ordering_elapsed": 823
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 290000,
+  "loading_elapsed": 57,
+  "reduction_elapsed": 11823,
+  "ordering_elapsed": 858
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 300000,
+  "loading_elapsed": 57,
+  "reduction_elapsed": 12405,
+  "ordering_elapsed": 829
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 310000,
+  "loading_elapsed": 61,
+  "reduction_elapsed": 12785,
+  "ordering_elapsed": 831
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 320000,
+  "loading_elapsed": 66,
+  "reduction_elapsed": 13257,
+  "ordering_elapsed": 830
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 330000,
+  "loading_elapsed": 69,
+  "reduction_elapsed": 13744,
+  "ordering_elapsed": 833
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 340000,
+  "loading_elapsed": 71,
+  "reduction_elapsed": 14193,
+  "ordering_elapsed": 832
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 350000,
+  "loading_elapsed": 83,
+  "reduction_elapsed": 14683,
+  "ordering_elapsed": 816
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 360000,
+  "loading_elapsed": 75,
+  "reduction_elapsed": 15226,
+  "ordering_elapsed": 821
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 370000,
+  "loading_elapsed": 78,
+  "reduction_elapsed": 16128,
+  "ordering_elapsed": 823
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 380000,
+  "loading_elapsed": 85,
+  "reduction_elapsed": 16277,
+  "ordering_elapsed": 835
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 390000,
+  "loading_elapsed": 85,
+  "reduction_elapsed": 16727,
+  "ordering_elapsed": 825
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 400000,
+  "loading_elapsed": 99,
+  "reduction_elapsed": 17321,
+  "ordering_elapsed": 910
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 410000,
+  "loading_elapsed": 102,
+  "reduction_elapsed": 17970,
+  "ordering_elapsed": 852
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 420000,
+  "loading_elapsed": 99,
+  "reduction_elapsed": 18613,
+  "ordering_elapsed": 833
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 430000,
+  "loading_elapsed": 97,
+  "reduction_elapsed": 20399,
+  "ordering_elapsed": 825
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 440000,
+  "loading_elapsed": 98,
+  "reduction_elapsed": 19770,
+  "ordering_elapsed": 826
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 450000,
+  "loading_elapsed": 103,
+  "reduction_elapsed": 20115,
+  "ordering_elapsed": 801
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 460000,
+  "loading_elapsed": 99,
+  "reduction_elapsed": 20024,
+  "ordering_elapsed": 781
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 470000,
+  "loading_elapsed": 111,
+  "reduction_elapsed": 20641,
+  "ordering_elapsed": 767
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 480000,
+  "loading_elapsed": 107,
+  "reduction_elapsed": 21250,
+  "ordering_elapsed": 754
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 490000,
+  "loading_elapsed": 105,
+  "reduction_elapsed": 21642,
+  "ordering_elapsed": 749
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 500000,
+  "loading_elapsed": 114,
+  "reduction_elapsed": 22246,
+  "ordering_elapsed": 735
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 510000,
+  "loading_elapsed": 110,
+  "reduction_elapsed": 22853,
+  "ordering_elapsed": 758
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 520000,
+  "loading_elapsed": 120,
+  "reduction_elapsed": 23723,
+  "ordering_elapsed": 748
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 530000,
+  "loading_elapsed": 124,
+  "reduction_elapsed": 24287,
+  "ordering_elapsed": 746
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 540000,
+  "loading_elapsed": 129,
+  "reduction_elapsed": 24914,
+  "ordering_elapsed": 754
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 550000,
+  "loading_elapsed": 126,
+  "reduction_elapsed": 25617,
+  "ordering_elapsed": 745
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 560000,
+  "loading_elapsed": 135,
+  "reduction_elapsed": 26273,
+  "ordering_elapsed": 738
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 570000,
+  "loading_elapsed": 145,
+  "reduction_elapsed": 26866,
+  "ordering_elapsed": 767
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 580000,
+  "loading_elapsed": 140,
+  "reduction_elapsed": 27575,
+  "ordering_elapsed": 767
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 590000,
+  "loading_elapsed": 143,
+  "reduction_elapsed": 30327,
+  "ordering_elapsed": 796
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 600000,
+  "loading_elapsed": 148,
+  "reduction_elapsed": 29014,
+  "ordering_elapsed": 761
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 610000,
+  "loading_elapsed": 154,
+  "reduction_elapsed": 29255,
+  "ordering_elapsed": 757
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 620000,
+  "loading_elapsed": 160,
+  "reduction_elapsed": 29967,
+  "ordering_elapsed": 771
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 630000,
+  "loading_elapsed": 161,
+  "reduction_elapsed": 30639,
+  "ordering_elapsed": 746
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 640000,
+  "loading_elapsed": 163,
+  "reduction_elapsed": 31260,
+  "ordering_elapsed": 732
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 650000,
+  "loading_elapsed": 171,
+  "reduction_elapsed": 31828,
+  "ordering_elapsed": 742
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 660000,
+  "loading_elapsed": 172,
+  "reduction_elapsed": 32285,
+  "ordering_elapsed": 757
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 670000,
+  "loading_elapsed": 183,
+  "reduction_elapsed": 32925,
+  "ordering_elapsed": 757
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 680000,
+  "loading_elapsed": 180,
+  "reduction_elapsed": 33553,
+  "ordering_elapsed": 763
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 690000,
+  "loading_elapsed": 185,
+  "reduction_elapsed": 34028,
+  "ordering_elapsed": 749
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 700000,
+  "loading_elapsed": 186,
+  "reduction_elapsed": 34699,
+  "ordering_elapsed": 743
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 710000,
+  "loading_elapsed": 195,
+  "reduction_elapsed": 35194,
+  "ordering_elapsed": 764
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 720000,
+  "loading_elapsed": 200,
+  "reduction_elapsed": 35730,
+  "ordering_elapsed": 741
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 730000,
+  "loading_elapsed": 202,
+  "reduction_elapsed": 36219,
+  "ordering_elapsed": 752
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 740000,
+  "loading_elapsed": 204,
+  "reduction_elapsed": 36855,
+  "ordering_elapsed": 750
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 750000,
+  "loading_elapsed": 209,
+  "reduction_elapsed": 37385,
+  "ordering_elapsed": 756
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 760000,
+  "loading_elapsed": 217,
+  "reduction_elapsed": 38210,
+  "ordering_elapsed": 750
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 770000,
+  "loading_elapsed": 219,
+  "reduction_elapsed": 38498,
+  "ordering_elapsed": 743
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 780000,
+  "loading_elapsed": 219,
+  "reduction_elapsed": 39205,
+  "ordering_elapsed": 739
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 790000,
+  "loading_elapsed": 230,
+  "reduction_elapsed": 39720,
+  "ordering_elapsed": 757
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 800000,
+  "loading_elapsed": 230,
+  "reduction_elapsed": 40263,
+  "ordering_elapsed": 736
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 810000,
+  "loading_elapsed": 234,
+  "reduction_elapsed": 40809,
+  "ordering_elapsed": 730
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 820000,
+  "loading_elapsed": 238,
+  "reduction_elapsed": 41174,
+  "ordering_elapsed": 746
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 830000,
+  "loading_elapsed": 242,
+  "reduction_elapsed": 41825,
+  "ordering_elapsed": 741
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 840000,
+  "loading_elapsed": 247,
+  "reduction_elapsed": 42457,
+  "ordering_elapsed": 755
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 850000,
+  "loading_elapsed": 254,
+  "reduction_elapsed": 43074,
+  "ordering_elapsed": 741
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 860000,
+  "loading_elapsed": 253,
+  "reduction_elapsed": 43617,
+  "ordering_elapsed": 738
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 870000,
+  "loading_elapsed": 268,
+  "reduction_elapsed": 44106,
+  "ordering_elapsed": 750
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 880000,
+  "loading_elapsed": 273,
+  "reduction_elapsed": 44780,
+  "ordering_elapsed": 754
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 890000,
+  "loading_elapsed": 270,
+  "reduction_elapsed": 45608,
+  "ordering_elapsed": 735
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 900000,
+  "loading_elapsed": 277,
+  "reduction_elapsed": 46047,
+  "ordering_elapsed": 746
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 910000,
+  "loading_elapsed": 285,
+  "reduction_elapsed": 46635,
+  "ordering_elapsed": 739
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 920000,
+  "loading_elapsed": 279,
+  "reduction_elapsed": 49345,
+  "ordering_elapsed": 761
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 930000,
+  "loading_elapsed": 282,
+  "reduction_elapsed": 47966,
+  "ordering_elapsed": 748
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 940000,
+  "loading_elapsed": 296,
+  "reduction_elapsed": 48291,
+  "ordering_elapsed": 746
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 950000,
+  "loading_elapsed": 293,
+  "reduction_elapsed": 48771,
+  "ordering_elapsed": 726
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 960000,
+  "loading_elapsed": 301,
+  "reduction_elapsed": 49387,
+  "ordering_elapsed": 742
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 970000,
+  "loading_elapsed": 302,
+  "reduction_elapsed": 49981,
+  "ordering_elapsed": 744
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 980000,
+  "loading_elapsed": 312,
+  "reduction_elapsed": 50788,
+  "ordering_elapsed": 732
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 990000,
+  "loading_elapsed": 322,
+  "reduction_elapsed": 51119,
+  "ordering_elapsed": 734
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1000000,
+  "loading_elapsed": 325,
+  "reduction_elapsed": 51612,
+  "ordering_elapsed": 749
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1010000,
+  "loading_elapsed": 332,
+  "reduction_elapsed": 52246,
+  "ordering_elapsed": 738
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1020000,
+  "loading_elapsed": 332,
+  "reduction_elapsed": 56751,
+  "ordering_elapsed": 791
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1030000,
+  "loading_elapsed": 438,
+  "reduction_elapsed": 56608,
+  "ordering_elapsed": 962
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1040000,
+  "loading_elapsed": 379,
+  "reduction_elapsed": 56640,
+  "ordering_elapsed": 767
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1050000,
+  "loading_elapsed": 350,
+  "reduction_elapsed": 57136,
+  "ordering_elapsed": 818
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1060000,
+  "loading_elapsed": 377,
+  "reduction_elapsed": 58033,
+  "ordering_elapsed": 812
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1070000,
+  "loading_elapsed": 374,
+  "reduction_elapsed": 57495,
+  "ordering_elapsed": 818
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1080000,
+  "loading_elapsed": 377,
+  "reduction_elapsed": 59471,
+  "ordering_elapsed": 819
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1090000,
+  "loading_elapsed": 396,
+  "reduction_elapsed": 60040,
+  "ordering_elapsed": 806
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1100000,
+  "loading_elapsed": 398,
+  "reduction_elapsed": 60627,
+  "ordering_elapsed": 807
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1110000,
+  "loading_elapsed": 398,
+  "reduction_elapsed": 61134,
+  "ordering_elapsed": 809
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1120000,
+  "loading_elapsed": 499,
+  "reduction_elapsed": 62060,
+  "ordering_elapsed": 801
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1130000,
+  "loading_elapsed": 430,
+  "reduction_elapsed": 62456,
+  "ordering_elapsed": 800
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1140000,
+  "loading_elapsed": 408,
+  "reduction_elapsed": 62844,
+  "ordering_elapsed": 802
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1150000,
+  "loading_elapsed": 408,
+  "reduction_elapsed": 63392,
+  "ordering_elapsed": 808
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1160000,
+  "loading_elapsed": 423,
+  "reduction_elapsed": 64274,
+  "ordering_elapsed": 809
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1170000,
+  "loading_elapsed": 429,
+  "reduction_elapsed": 64745,
+  "ordering_elapsed": 800
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1180000,
+  "loading_elapsed": 437,
+  "reduction_elapsed": 65330,
+  "ordering_elapsed": 818
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1190000,
+  "loading_elapsed": 442,
+  "reduction_elapsed": 65892,
+  "ordering_elapsed": 819
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1200000,
+  "loading_elapsed": 447,
+  "reduction_elapsed": 66578,
+  "ordering_elapsed": 812
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1210000,
+  "loading_elapsed": 453,
+  "reduction_elapsed": 67236,
+  "ordering_elapsed": 816
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1220000,
+  "loading_elapsed": 454,
+  "reduction_elapsed": 67780,
+  "ordering_elapsed": 818
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1230000,
+  "loading_elapsed": 464,
+  "reduction_elapsed": 68353,
+  "ordering_elapsed": 817
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1240000,
+  "loading_elapsed": 464,
+  "reduction_elapsed": 68933,
+  "ordering_elapsed": 811
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1250000,
+  "loading_elapsed": 474,
+  "reduction_elapsed": 69407,
+  "ordering_elapsed": 832
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1260000,
+  "loading_elapsed": 471,
+  "reduction_elapsed": 69899,
+  "ordering_elapsed": 816
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1270000,
+  "loading_elapsed": 484,
+  "reduction_elapsed": 70634,
+  "ordering_elapsed": 816
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1280000,
+  "loading_elapsed": 492,
+  "reduction_elapsed": 71308,
+  "ordering_elapsed": 824
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1290000,
+  "loading_elapsed": 496,
+  "reduction_elapsed": 71895,
+  "ordering_elapsed": 820
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1300000,
+  "loading_elapsed": 675,
+  "reduction_elapsed": 73056,
+  "ordering_elapsed": 811
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1310000,
+  "loading_elapsed": 506,
+  "reduction_elapsed": 73116,
+  "ordering_elapsed": 812
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1320000,
+  "loading_elapsed": 515,
+  "reduction_elapsed": 73458,
+  "ordering_elapsed": 820
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1330000,
+  "loading_elapsed": 515,
+  "reduction_elapsed": 74199,
+  "ordering_elapsed": 809
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1340000,
+  "loading_elapsed": 525,
+  "reduction_elapsed": 74802,
+  "ordering_elapsed": 816
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1350000,
+  "loading_elapsed": 526,
+  "reduction_elapsed": 75272,
+  "ordering_elapsed": 824
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1360000,
+  "loading_elapsed": 535,
+  "reduction_elapsed": 75748,
+  "ordering_elapsed": 810
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1370000,
+  "loading_elapsed": 541,
+  "reduction_elapsed": 76675,
+  "ordering_elapsed": 826
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1380000,
+  "loading_elapsed": 550,
+  "reduction_elapsed": 77182,
+  "ordering_elapsed": 824
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1390000,
+  "loading_elapsed": 552,
+  "reduction_elapsed": 77754,
+  "ordering_elapsed": 802
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1400000,
+  "loading_elapsed": 565,
+  "reduction_elapsed": 78384,
+  "ordering_elapsed": 829
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1410000,
+  "loading_elapsed": 568,
+  "reduction_elapsed": 78931,
+  "ordering_elapsed": 814
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1420000,
+  "loading_elapsed": 566,
+  "reduction_elapsed": 79483,
+  "ordering_elapsed": 818
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1430000,
+  "loading_elapsed": 579,
+  "reduction_elapsed": 79928,
+  "ordering_elapsed": 797
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1440000,
+  "loading_elapsed": 583,
+  "reduction_elapsed": 80525,
+  "ordering_elapsed": 808
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1450000,
+  "loading_elapsed": 581,
+  "reduction_elapsed": 81415,
+  "ordering_elapsed": 828
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1460000,
+  "loading_elapsed": 584,
+  "reduction_elapsed": 81893,
+  "ordering_elapsed": 822
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1470000,
+  "loading_elapsed": 591,
+  "reduction_elapsed": 82360,
+  "ordering_elapsed": 821
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1480000,
+  "loading_elapsed": 598,
+  "reduction_elapsed": 83146,
+  "ordering_elapsed": 831
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1490000,
+  "loading_elapsed": 604,
+  "reduction_elapsed": 83571,
+  "ordering_elapsed": 832
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1500000,
+  "loading_elapsed": 613,
+  "reduction_elapsed": 84307,
+  "ordering_elapsed": 820
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1510000,
+  "loading_elapsed": 621,
+  "reduction_elapsed": 85064,
+  "ordering_elapsed": 824
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1520000,
+  "loading_elapsed": 631,
+  "reduction_elapsed": 85269,
+  "ordering_elapsed": 820
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1530000,
+  "loading_elapsed": 638,
+  "reduction_elapsed": 85865,
+  "ordering_elapsed": 827
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1540000,
+  "loading_elapsed": 638,
+  "reduction_elapsed": 86432,
+  "ordering_elapsed": 822
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1550000,
+  "loading_elapsed": 643,
+  "reduction_elapsed": 86595,
+  "ordering_elapsed": 802
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1560000,
+  "loading_elapsed": 644,
+  "reduction_elapsed": 87894,
+  "ordering_elapsed": 823
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1570000,
+  "loading_elapsed": 658,
+  "reduction_elapsed": 88242,
+  "ordering_elapsed": 825
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1580000,
+  "loading_elapsed": 662,
+  "reduction_elapsed": 88871,
+  "ordering_elapsed": 826
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1590000,
+  "loading_elapsed": 661,
+  "reduction_elapsed": 89537,
+  "ordering_elapsed": 840
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1600000,
+  "loading_elapsed": 669,
+  "reduction_elapsed": 89938,
+  "ordering_elapsed": 819
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1610000,
+  "loading_elapsed": 669,
+  "reduction_elapsed": 90547,
+  "ordering_elapsed": 833
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1620000,
+  "loading_elapsed": 687,
+  "reduction_elapsed": 91047,
+  "ordering_elapsed": 811
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1630000,
+  "loading_elapsed": 688,
+  "reduction_elapsed": 91635,
+  "ordering_elapsed": 839
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1640000,
+  "loading_elapsed": 689,
+  "reduction_elapsed": 91932,
+  "ordering_elapsed": 822
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1650000,
+  "loading_elapsed": 697,
+  "reduction_elapsed": 92710,
+  "ordering_elapsed": 821
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1660000,
+  "loading_elapsed": 703,
+  "reduction_elapsed": 93401,
+  "ordering_elapsed": 804
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1670000,
+  "loading_elapsed": 710,
+  "reduction_elapsed": 93999,
+  "ordering_elapsed": 841
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1680000,
+  "loading_elapsed": 714,
+  "reduction_elapsed": 94735,
+  "ordering_elapsed": 937
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1690000,
+  "loading_elapsed": 772,
+  "reduction_elapsed": 96608,
+  "ordering_elapsed": 872
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1700000,
+  "loading_elapsed": 762,
+  "reduction_elapsed": 95973,
+  "ordering_elapsed": 835
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1710000,
+  "loading_elapsed": 730,
+  "reduction_elapsed": 96637,
+  "ordering_elapsed": 846
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1720000,
+  "loading_elapsed": 741,
+  "reduction_elapsed": 96786,
+  "ordering_elapsed": 819
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1730000,
+  "loading_elapsed": 752,
+  "reduction_elapsed": 97336,
+  "ordering_elapsed": 841
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1740000,
+  "loading_elapsed": 750,
+  "reduction_elapsed": 97979,
+  "ordering_elapsed": 846
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1750000,
+  "loading_elapsed": 756,
+  "reduction_elapsed": 98634,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1760000,
+  "loading_elapsed": 759,
+  "reduction_elapsed": 99162,
+  "ordering_elapsed": 829
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1770000,
+  "loading_elapsed": 771,
+  "reduction_elapsed": 99659,
+  "ordering_elapsed": 829
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1780000,
+  "loading_elapsed": 777,
+  "reduction_elapsed": 100090,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1790000,
+  "loading_elapsed": 779,
+  "reduction_elapsed": 100563,
+  "ordering_elapsed": 838
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1800000,
+  "loading_elapsed": 789,
+  "reduction_elapsed": 101372,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1810000,
+  "loading_elapsed": 797,
+  "reduction_elapsed": 102085,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1820000,
+  "loading_elapsed": 796,
+  "reduction_elapsed": 102582,
+  "ordering_elapsed": 835
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1830000,
+  "loading_elapsed": 814,
+  "reduction_elapsed": 103035,
+  "ordering_elapsed": 843
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1840000,
+  "loading_elapsed": 814,
+  "reduction_elapsed": 104636,
+  "ordering_elapsed": 885
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1850000,
+  "loading_elapsed": 800,
+  "reduction_elapsed": 104602,
+  "ordering_elapsed": 836
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1860000,
+  "loading_elapsed": 825,
+  "reduction_elapsed": 104621,
+  "ordering_elapsed": 831
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1870000,
+  "loading_elapsed": 833,
+  "reduction_elapsed": 105478,
+  "ordering_elapsed": 831
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1880000,
+  "loading_elapsed": 835,
+  "reduction_elapsed": 106116,
+  "ordering_elapsed": 859
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1890000,
+  "loading_elapsed": 843,
+  "reduction_elapsed": 106662,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1900000,
+  "loading_elapsed": 845,
+  "reduction_elapsed": 107374,
+  "ordering_elapsed": 844
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1910000,
+  "loading_elapsed": 857,
+  "reduction_elapsed": 107989,
+  "ordering_elapsed": 834
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1920000,
+  "loading_elapsed": 856,
+  "reduction_elapsed": 108429,
+  "ordering_elapsed": 837
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1930000,
+  "loading_elapsed": 865,
+  "reduction_elapsed": 108754,
+  "ordering_elapsed": 832
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1940000,
+  "loading_elapsed": 865,
+  "reduction_elapsed": 110089,
+  "ordering_elapsed": 894
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1950000,
+  "loading_elapsed": 942,
+  "reduction_elapsed": 110336,
+  "ordering_elapsed": 851
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1960000,
+  "loading_elapsed": 883,
+  "reduction_elapsed": 111201,
+  "ordering_elapsed": 845
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1970000,
+  "loading_elapsed": 896,
+  "reduction_elapsed": 110884,
+  "ordering_elapsed": 789
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1980000,
+  "loading_elapsed": 856,
+  "reduction_elapsed": 110787,
+  "ordering_elapsed": 840
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 1990000,
+  "loading_elapsed": 912,
+  "reduction_elapsed": 111601,
+  "ordering_elapsed": 846
+},
+{
+  "number_of_fixed_nodes": 5000,
+  "number_of_free_nodes": 5000,
+  "number_of_edges": 2000000,
+  "loading_elapsed": 906,
+  "reduction_elapsed": 110442,
+  "ordering_elapsed": 785
+},
+]
