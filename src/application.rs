@@ -33,6 +33,19 @@ impl Application {
         Application {}
     }
 
+    pub fn run_small_tests(&self) -> Result<(), Error> {
+        self.run_test_on_randomly_generated_graph(50, 50, 200)?;
+        self.run_test_on_randomly_generated_graph(100, 100, 2000)?;
+        self.run_test_on_randomly_generated_graph(200, 200, 4000)?;
+        self.run_test_on_randomly_generated_graph(500, 500, 10000)?;
+        self.run_test_on_randomly_generated_graph(1000, 1000, 50000)?;
+        self.run_test_on_randomly_generated_graph(2000, 2000, 100000)?;
+        self.run_test_on_randomly_generated_graph(5000, 5000, 250000)?;
+        self.run_test_on_randomly_generated_graph(10000, 10000, 1000000)?;
+
+        Ok(())
+    }
+
     pub fn run_on_specific_case(
         &self,
         number_of_fixed_nodes: usize,
@@ -50,7 +63,12 @@ impl Application {
         for _ in 0..number_of_test_cases {
             let graph =
                 GraphBuilder::build_graph_with_fixed_nodes_and_no_crossings(number_of_fixed_nodes);
-            let ordering = graph.sort_fas();
+            let penalty_digraph = PenaltyDigraph::from_graph(&graph);
+            let ordering = penalty_digraph
+                .sort_fas()
+                .iter()
+                .map(|e| e + graph.number_of_fixed_nodes())
+                .collect();
             let number_of_crossings = graph.compute_number_of_crossings_for_ordering(&ordering)?;
             if number_of_crossings != 0 {
                 number_of_graphs_with_crossings += 1;
@@ -67,141 +85,6 @@ impl Application {
         Ok(())
     }
 
-    pub fn run_benchmark_for_20_million_edges(&self) -> Result<Vec<BenchmarkStats>, Error> {
-        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
-
-        println!("----- Starting benchmark for 20 million edges and different number of nodes -------------------------------------------------");
-
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(5_000, 5_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(10_000, 10_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(15_000, 15_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(20_000, 20_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(30_000, 30_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(40_000, 40_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(50_000, 50_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(60_000, 60_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(70_000, 70_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(80_000, 80_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(90_000, 90_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(100_000, 100_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(150_000, 150_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(200_000, 200_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(250_000, 250_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(300_000, 300_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(400_000, 400_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(500_000, 500_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(750_000, 750_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_250_000, 1_250_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_500_000, 1_500_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(2_000_000, 2_000_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(2_500_000, 2_500_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(3_000_000, 3_000_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(3_500_000, 3_500_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(4_000_000, 4_000_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(5_000_000, 5_000_000, 20_000_000)?);
-
-        let mut file = File::create("benchmark_20_million_edges.json")?;
-        let json = serde_json::to_string_pretty(&benchmark_stats).expect("Converted to json.");
-        let _ = file.write_all(json.as_bytes());
-
-        Ok(benchmark_stats)
-    }
-
-    pub fn run_benchmark_for_1_million_fixed_and_free_nodes(
-        &self,
-    ) -> Result<Vec<BenchmarkStats>, Error> {
-        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
-
-        println!("----- Starting benchmark for 1 million fixed nodes, 1 millon free nodes and different number of edges -------------------------------------------------");
-
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 100_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 500_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 1_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 2_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 3_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 4_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 5_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 10_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 20_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 30_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 40_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 50_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 60_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 70_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 80_000_000)?);
-        benchmark_stats
-            .push(self.run_test_on_randomly_generated_graph(1_000_000, 1_000_000, 90_000_000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(
-            1_000_000,
-            1_000_000,
-            100_000_000,
-        )?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(
-            1_000_000,
-            1_000_000,
-            150_000_000,
-        )?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(
-            1_000_000,
-            1_000_000,
-            200_000_000,
-        )?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(
-            1_000_000,
-            1_000_000,
-            250_000_000,
-        )?);
-
-        let mut file = File::create("benchmark_1_million_fixed_and_free_nodes.json")?;
-        let json = serde_json::to_string_pretty(&benchmark_stats).expect("Converted to json.");
-        let _ = file.write_all(json.as_bytes());
-
-        Ok(benchmark_stats)
-    }
-
     pub fn run_tests_on_tiny_test_set(&self) -> Result<(), Error> {
         let paths = fs::read_dir("ressources/tiny_test_set")?;
 
@@ -210,7 +93,6 @@ impl Application {
             .map(|entry| entry.path().to_str().unwrap().to_owned())
             .collect();
         filenames.sort();
-
 
         for filename in filenames {
             self.run_test_on_graph_from_file(&filename, true, true)?;
@@ -268,9 +150,15 @@ impl Application {
         println!(" done! ({} ms)", generation_elapsed);
 
         let begin = Instant::now();
+        print!("Computing cross table...");
+        io::stdout().flush()?;
+        let penalty_digraph = PenaltyDigraph::from_graph(&graph);
+        println!(" done! ({} ms)", begin.elapsed().as_millis());
+
+        let begin = Instant::now();
         print!("Computing ordering...");
         io::stdout().flush()?;
-        graph.sort_fas();
+        penalty_digraph.sort_fas();
         let ordering_elapsed = begin.elapsed().as_millis();
         println!(" done! ({} ms)", generation_elapsed);
         println!("");
@@ -291,12 +179,10 @@ impl Application {
         should_compute_number_of_crossings: bool,
     ) -> Result<(), Error> {
         let begin = Instant::now();
-        print!("Generating cross table...");
+        print!("Computing cross table...");
         io::stdout().flush()?;
         let penalty_digraph = PenaltyDigraph::from_graph(&graph);
         println!(" done! ({} ms)", begin.elapsed().as_millis());
-
-        // println!("{:#?}", penalty_digraph);
 
         if should_compute_number_of_crossings {
             let begin = Instant::now();

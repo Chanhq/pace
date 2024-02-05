@@ -93,26 +93,6 @@ impl Graph {
             .contains(&index2))
     }
 
-    pub fn sort_fas(&self) -> Vec<usize> {
-        let sorted_nodes = self.sort_nodes();
-        let mut feedback_arc_set: Vec<usize> = Vec::new();
-        let mut removed_nodes: HashSet<usize> = HashSet::new();
-
-        for node_index in sorted_nodes {
-            for neighbor_index in self
-                .adjacency_list
-                .get(node_index)
-                .expect("Index must exist")
-            {
-                if removed_nodes.insert(*neighbor_index) {
-                    feedback_arc_set.push(*neighbor_index);
-                }
-            }
-        }
-
-        feedback_arc_set
-    }
-
     pub fn compute_number_of_crossings_with_default_ordering(&self) -> Result<usize, Error> {
         let mut number_of_crossings = 0;
 
@@ -214,53 +194,4 @@ impl Graph {
         }
     }
 
-    fn sort_nodes(&self) -> Vec<usize> {
-        let mut in_degree: Vec<usize> = iter::repeat(0).take(self.number_of_nodes).collect();
-
-        for neighbors in self.adjacency_list.iter() {
-            for neighbor_index in neighbors {
-                *in_degree.get_mut(*neighbor_index).expect(
-                    "The generated vector must be large enough to fit all graph indices",
-                ) += 1;
-            }
-        }
-
-        let mut q: VecDeque<usize> = VecDeque::new();
-
-        in_degree
-            .iter()
-            .enumerate()
-            .filter(|(_, d)| **d == 0)
-            .for_each(|(i, _)| q.push_back(i));
-
-        let mut sorted_nodes: Vec<usize> = Vec::new();
-
-        while !q.is_empty() {
-            let next_index = q
-                .pop_front()
-                .expect("Element exists, because queue is not empty");
-            sorted_nodes.push(next_index);
-
-            for neighbor_index in self
-                .adjacency_list
-                .get(next_index)
-                .expect("Index must exist")
-            {
-                let degree = in_degree
-                    .get_mut(*neighbor_index)
-                    .expect("The generated vector must be large enough to fit all graph indices");
-
-                match *degree {
-                    2.. => *degree -= 1,
-                    1 => {
-                        *degree -= 1;
-                        q.push_back(*neighbor_index);
-                    }
-                    0 => panic!("The degree of a node would have been reduced "),
-                }
-            }
-        }
-
-        sorted_nodes
-    }
 }

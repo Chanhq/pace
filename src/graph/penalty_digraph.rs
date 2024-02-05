@@ -1,22 +1,21 @@
-use std::{fmt::Debug, iter};
+use std::{collections::HashSet, fmt::Debug, iter};
 
 use super::Graph;
 
+#[derive(Debug)]
 pub struct PenaltyDigraph {
     number_of_nodes: usize,
-    crossing_table: Vec<Vec<isize>>,
+    adjacency_list: Vec<HashSet<usize>>,
 }
 
 // CONSTRUCTORS
 impl PenaltyDigraph {
     pub fn new(number_of_nodes: usize) -> PenaltyDigraph {
-        let crossing_table = iter::repeat(iter::repeat(0).take(number_of_nodes).collect())
-            .take(number_of_nodes)
-            .collect();
+        let adjacency_list = iter::repeat(HashSet::new()).take(number_of_nodes).collect();
 
         PenaltyDigraph {
             number_of_nodes,
-            crossing_table,
+            adjacency_list,
         }
     }
 
@@ -81,22 +80,21 @@ impl PenaltyDigraph {
 
 // PUBLIC METHODS
 impl PenaltyDigraph {
-    pub fn crossing_table(&self) -> &Vec<Vec<isize>> {
-        self.crossing_table.as_ref()
+
+    fn add_crossings(&mut self, u: usize, v: usize, c_uv: isize, c_vu: isize) {
+        if c_vu < c_uv {
+            self.add_edge(u, v);
+        } else if c_uv < c_vu {
+            self.add_edge(v, u);
+        }
     }
 
-    pub fn add_crossings(&mut self, u: usize, v: usize, c_uv: isize, c_vu: isize) {
-        let uv = self.crossing_table.get_mut(u).unwrap().get_mut(v).unwrap();
-        *uv += c_uv;
-        let vu = self.crossing_table.get_mut(v).unwrap().get_mut(u).unwrap();
-        *vu += c_vu;
+    fn add_edge(&mut self, u: usize, v: usize) -> bool {
+        self.adjacency_list.get_mut(u).unwrap().insert(v)
     }
 
     fn edge_exists(&self, u: usize, v: usize) -> bool {
-        let uv = *self.crossing_table.get(u).unwrap().get(v).unwrap();
-        let vu = *self.crossing_table.get(v).unwrap().get(u).unwrap();
-
-        vu < uv
+        self.adjacency_list.get(u).unwrap().contains(&v)
     }
 
     pub fn sort_fas(&self) -> Vec<usize> {
@@ -124,18 +122,5 @@ impl PenaltyDigraph {
         }
 
         ordering
-    }
-}
-
-impl Debug for PenaltyDigraph {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        writeln!(f, "{}", self.number_of_nodes)?;
-        for row in self.crossing_table.iter() {
-            for e in row {
-                write!(f, "{} ", e)?;
-            }
-            writeln!(f, "")?;
-        }
-        write!(f, "")
     }
 }

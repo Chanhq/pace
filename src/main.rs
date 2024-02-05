@@ -28,15 +28,7 @@ fn main(){
     // println!("{} -> {}", crossings_before, crossings_after);
 
     let application = Application::new();
-    // application.run_on_specific_case().unwrap();
 
     application.run_tests_on_tiny_test_set().unwrap();
-    
-    // let graph = GraphBuilder::build_graph_from_file("ressources/tiny_test_set/cycle_8_shuffled.gr").unwrap();
-    // let ordering = graph.new_sort_fas();
-    // println!("{:?}", ordering);
-
-
-    // application.run_benchmark_for_1_million_fixed_and_free_nodes().unwrap();
-    // application.run_benchmark_for_20_million_edges().unwrap();
+    application.run_small_tests().unwrap();
 }
