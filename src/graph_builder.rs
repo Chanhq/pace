@@ -3,7 +3,7 @@ use std::{
     io::{BufRead, BufReader},
 };
 
-use rand::Rng;
+use rand::{seq::SliceRandom, thread_rng, Rng};
 
 use crate::{error::Error, graph::Graph};
 
@@ -11,6 +11,36 @@ pub struct GraphBuilder {}
 
 // PUBLIC METHODS ------------------------------------------------------------------
 impl GraphBuilder {
+    pub fn build_graph_with_fixed_nodes_and_no_crossings(number_of_fixed_nodes: usize) -> Graph {
+        let mut graph = Graph::new(number_of_fixed_nodes, number_of_fixed_nodes);
+
+        let mut randomly_ordered_free_nodes: Vec<usize> =
+            (number_of_fixed_nodes..2 * number_of_fixed_nodes).collect();
+        randomly_ordered_free_nodes.shuffle(&mut thread_rng());
+
+        for fixed_node_index in 0..number_of_fixed_nodes - 1 {
+            let neighbor1 = randomly_ordered_free_nodes
+                .get(fixed_node_index)
+                .expect("Must exist")
+                .to_owned();
+            let neighbor2 = randomly_ordered_free_nodes
+                .get(fixed_node_index + 1)
+                .expect("Must exist")
+                .to_owned();
+            graph.add_edge(neighbor1, fixed_node_index).unwrap();
+            graph.add_edge(neighbor2, fixed_node_index).unwrap();
+        }
+
+        graph
+            .add_edge(
+                randomly_ordered_free_nodes.last().unwrap().to_owned(),
+                number_of_fixed_nodes - 1,
+            )
+            .unwrap();
+
+        graph
+    }
+
     pub fn build_graph_from_file(filename: &str) -> Result<Graph, Error> {
         let file = File::open(filename)?;
 
@@ -71,7 +101,7 @@ impl GraphBuilder {
                 let free_node_index =
                     rng.gen_range(graph.number_of_fixed_nodes()..graph.number_of_nodes());
 
-                if graph.add_edge(fixed_node_index, free_node_index)? {
+                if graph.add_edge(free_node_index, fixed_node_index)? {
                     break;
                 }
             }
