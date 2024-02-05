@@ -55,7 +55,6 @@ impl Application {
             number_of_test_cases, number_of_fixed_nodes, number_of_fixed_nodes
         );
 
-        let mut number_of_graphs_with_crossings: usize = 0;
         let mut crossing_counts: Vec<usize> = Vec::new();
 
         for _ in 0..number_of_test_cases {
