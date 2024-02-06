@@ -51,6 +51,29 @@ impl Application {
         Ok(benchmark_stats)
     }
 
+    pub fn run_tests_with_same_edges_and_free_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
+        let number_of_free_nodes = 5_000;
+        let number_of_edges = 50_000;
+        let fixed_node_step_size = 5_000;
+        let max_number_of_fixed_nodes = 500_000;
+
+        println!("----- Run tests on graphs with {number_of_free_nodes} free nodes and {number_of_edges} edges --------------------------------------------------");
+        let mut file = File::create("benchmark_results/benchmark_with_const_free_nodes_and_edges.json")?;
+        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
+
+        file.write(b"[\n")?;
+        for number_of_fixed_nodes in (fixed_node_step_size..= max_number_of_fixed_nodes).step_by(fixed_node_step_size) {
+            let benchmark = self.run_test_on_randomly_generated_graph(number_of_fixed_nodes, number_of_free_nodes, number_of_edges)?;
+            let benchmark_json = serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
+            file.write(benchmark_json.as_bytes())?;
+            file.write(b",\n")?;
+            benchmark_stats.push(benchmark);
+        }
+        file.write(b"]")?;
+
+        Ok(benchmark_stats)
+    }
+
     pub fn run_tests_with_same_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
         let number_of_nodes = 5_000;
         let edge_step_size = 10_000;
