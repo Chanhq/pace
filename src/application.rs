@@ -22,13 +22,19 @@ pub struct BenchmarkStats {
     pub ordering_elapsed: u128,
 }
 
+/// This struct provides a number of methods that run different tests
 pub struct Application {}
 
+// PUBLIC METHODS
 impl Application {
+    /// Constructs a new `Application`
     pub fn new() -> Application {
         Application {}
     }
 
+    /// Runs tests on randomly generated graphs with a fixed number of edges (100,000)
+    ///
+    /// The generated graphs have different numbers of fixed and free nodes, ranging from 500 to 30,000
     pub fn run_tests_with_same_edges(&self) -> Result<Vec<BenchmarkStats>, Error> {
         let number_of_edges = 100_000;
         let node_step_size = 500;
@@ -39,9 +45,14 @@ impl Application {
         let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
 
         file.write(b"[\n")?;
-        for number_of_nodes in (node_step_size..= max_number_of_nodes).step_by(node_step_size) {
-            let benchmark = self.run_test_on_randomly_generated_graph(number_of_nodes, number_of_nodes, number_of_edges)?;
-            let benchmark_json = serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
+        for number_of_nodes in (node_step_size..=max_number_of_nodes).step_by(node_step_size) {
+            let benchmark = self.run_test_on_randomly_generated_graph(
+                number_of_nodes,
+                number_of_nodes,
+                number_of_edges,
+            )?;
+            let benchmark_json =
+                serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
             file.write(benchmark_json.as_bytes())?;
             file.write(b",\n")?;
             benchmark_stats.push(benchmark);
@@ -51,6 +62,9 @@ impl Application {
         Ok(benchmark_stats)
     }
 
+    /// Runs tests on randomly generated graphs with a fixed number of edges (100,000) and free nodes(5,000)
+    ///
+    /// The generated graphs have different numbers of fixed nodes, ranging from 5,000 to 500,000
     pub fn run_tests_with_same_edges_and_free_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
         let number_of_free_nodes = 5_000;
         let number_of_edges = 50_000;
@@ -58,13 +72,21 @@ impl Application {
         let max_number_of_fixed_nodes = 500_000;
 
         println!("----- Run tests on graphs with {number_of_free_nodes} free nodes and {number_of_edges} edges --------------------------------------------------");
-        let mut file = File::create("benchmark_results/benchmark_with_const_free_nodes_and_edges.json")?;
+        let mut file =
+            File::create("benchmark_results/benchmark_with_const_free_nodes_and_edges.json")?;
         let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
 
         file.write(b"[\n")?;
-        for number_of_fixed_nodes in (fixed_node_step_size..= max_number_of_fixed_nodes).step_by(fixed_node_step_size) {
-            let benchmark = self.run_test_on_randomly_generated_graph(number_of_fixed_nodes, number_of_free_nodes, number_of_edges)?;
-            let benchmark_json = serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
+        for number_of_fixed_nodes in
+            (fixed_node_step_size..=max_number_of_fixed_nodes).step_by(fixed_node_step_size)
+        {
+            let benchmark = self.run_test_on_randomly_generated_graph(
+                number_of_fixed_nodes,
+                number_of_free_nodes,
+                number_of_edges,
+            )?;
+            let benchmark_json =
+                serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
             file.write(benchmark_json.as_bytes())?;
             file.write(b",\n")?;
             benchmark_stats.push(benchmark);
@@ -74,6 +96,9 @@ impl Application {
         Ok(benchmark_stats)
     }
 
+    /// Runs tests on randomly generated graphs with a fixed number of fixed and free nodes (5,000)
+    ///
+    /// The generated graphs have different numbers of edges, ranging from 10,000 to 2,000,000
     pub fn run_tests_with_same_nodes(&self) -> Result<Vec<BenchmarkStats>, Error> {
         let number_of_nodes = 5_000;
         let edge_step_size = 10_000;
@@ -84,9 +109,14 @@ impl Application {
         let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
 
         file.write(b"[\n")?;
-        for number_of_edges in (edge_step_size..= max_number_of_edges).step_by(edge_step_size) {
-            let benchmark = self.run_test_on_randomly_generated_graph(number_of_nodes, number_of_nodes, number_of_edges)?;
-            let benchmark_json = serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
+        for number_of_edges in (edge_step_size..=max_number_of_edges).step_by(edge_step_size) {
+            let benchmark = self.run_test_on_randomly_generated_graph(
+                number_of_nodes,
+                number_of_nodes,
+                number_of_edges,
+            )?;
+            let benchmark_json =
+                serde_json::to_string_pretty(&benchmark).expect("Converted to json.");
             file.write(benchmark_json.as_bytes())?;
             file.write(b",\n")?;
             benchmark_stats.push(benchmark);
@@ -96,26 +126,16 @@ impl Application {
         Ok(benchmark_stats)
     }
 
-    pub fn run_small_tests(&self) -> Result<Vec<BenchmarkStats>, Error> {
-        println!("----- Run some random tests --------------------------------------------------");
-        let mut file = File::create("benchmark_results/benchmark_random_tests.json")?;
-        let mut benchmark_stats: Vec<BenchmarkStats> = Vec::new();
-
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(50, 50, 200)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(100, 100, 2000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(200, 200, 4000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(500, 500, 10000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(1000, 1000, 50000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(2000, 2000, 100000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(5000, 5000, 250000)?);
-        benchmark_stats.push(self.run_test_on_randomly_generated_graph(10000, 10000, 1000000)?);
-
-        let json = serde_json::to_string_pretty(&benchmark_stats).expect("Converted to json.");
-        let _ = file.write_all(json.as_bytes());
-
-        Ok(benchmark_stats)
-    }
-
+    /// Runs tests on randomly generated graphs with a specific property.
+    ///
+    /// The generated graphs would have 0 crossings in the optimal ordering.
+    /// Optimally orderer they should look like this:
+    /// o o o o o o
+    /// |/|/|/|/|/|
+    /// o o o o o o
+    /// 
+    /// However, the free edges are sorted randomly in the default ordering, so graph might contain many crossings initially.
+    /// The test should output the number of test instances could not be optimally solved with our algorithm.
     pub fn run_on_specific_case(
         &self,
         number_of_fixed_nodes: usize,
@@ -154,6 +174,7 @@ impl Application {
         Ok(())
     }
 
+    /// Loads the graphs from /ressources/tiny_test_set and performs the algorithm on that
     pub fn run_tests_on_tiny_test_set(&self) -> Result<(), Error> {
         let paths = fs::read_dir("ressources/tiny_test_set")?;
 
@@ -171,7 +192,9 @@ impl Application {
     }
 }
 
+// PRIVATE METHODS
 impl Application {
+    /// Loads a graph from a file and tests the algorithm on that graph
     fn run_test_on_graph_from_file(
         &self,
         filename: &str,
@@ -199,6 +222,7 @@ impl Application {
         )
     }
 
+    /// Generates a random graph and tests the algorithm on that graph
     fn run_test_on_randomly_generated_graph(
         &self,
         number_of_fixed_nodes: usize,
@@ -222,6 +246,7 @@ impl Application {
         self.run_test_on_graph(&graph, loading_elapsed, false, false)
     }
 
+    /// Tests the algorithm on a given graph
     fn run_test_on_graph(
         &self,
         graph: &Graph,

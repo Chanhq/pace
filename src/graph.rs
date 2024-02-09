@@ -4,6 +4,20 @@ use std::{collections::{BTreeSet, HashMap, HashSet}, iter};
 
 use crate::error::Error;
 
+
+
+/// Default representation of a graph for the OCM problem
+/// 
+/// This struct represents a bipartite graph with nodes from 2 sets (A/fixed and B/free). 
+/// `number_of_free_nodes` represents the number of nodes in set A
+/// `number_of_fixed_nodes` represents the number of nodes in set B
+/// `number_of_nodes` represents the total number of nodes
+/// `number_of_edges` represents the total number of edges (not directed). Only between a node from set A and a note from set B are allowed.
+/// `adjacency_list` represents the edges, stored in an adjacency-list format (adjacency_list[0] are all neighbours of node 0)
+/// 
+/// The nodes are numbered in ascending order. The fixed nodes have indices between `0`(inclusive) and `number_of_fixed_nodes`(exclusive). 
+/// The free nodes have indices between `number_of_fixed_nodes`(inclusive) and `number_of_nodes`(exclusive).
+/// The normally assumed ordering of the free nodes is in ascending index order.
 #[derive(Debug)]
 pub struct Graph {
     number_of_nodes: usize,
@@ -33,6 +47,7 @@ impl Graph {
 
 // PUBLIC FUNCTIONS ---------------------------------------------------------------------------------
 impl Graph {
+    /// Initializes a new Graph without edges
     pub fn new(number_of_fixed_nodes: usize, number_of_free_nodes: usize) -> Graph {
         let number_of_nodes = number_of_fixed_nodes + number_of_free_nodes;
         Graph {
@@ -44,6 +59,13 @@ impl Graph {
         }
     }
 
+    /// Adds an edge between two nodes
+    /// 
+    /// Tries to add an edge to the Graph. 
+    /// Returns Ok(true) if the edge was inserted successfully.
+    /// Returns Ok(false) if the edge already existed.
+    /// 
+    /// Returns Err(_) if an error occurs
     pub fn add_edge(&mut self, node_index1: usize, node_index2: usize) -> Result<bool, Error> {
         if node_index1 >= self.number_of_nodes || node_index2 >= self.number_of_nodes {
             return Err(Error::IndexError("Index out of bounds".to_string()));
@@ -70,6 +92,7 @@ impl Graph {
         Ok(inserted_successfully1)
     }
 
+    /// Checks, if an edge between two nodes exists
     pub fn does_edge_exist(&self, index1: usize, index2: usize) -> Result<bool, Error> {
         if index1 >= self.number_of_nodes || index2 >= self.number_of_nodes {
             return Err(Error::IndexError("Index is out of bounds".to_string()));
@@ -82,6 +105,7 @@ impl Graph {
             .contains(&index2))
     }
 
+    /// Computes the number of crossings with all free nodes in ascending index order
     pub fn compute_number_of_crossings_with_default_ordering(&self) -> Result<usize, Error> {
         let mut number_of_crossings = 0;
 
@@ -108,6 +132,9 @@ impl Graph {
         Ok(number_of_crossings)
     }
 
+    /// Computes the number of crossings for a specific ordering of the free nodes
+    /// 
+    /// The input ordering **must** contain all free nodes (and each exactly once), otherwise the function returns an error
     pub fn compute_number_of_crossings_for_ordering(
         &self,
         ordering: &Vec<usize>,

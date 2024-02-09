@@ -2,6 +2,14 @@ use std::{collections::HashSet, fmt::Debug, iter};
 
 use super::Graph;
 
+
+/// Default representation of a penalty digraph for the OCM problem
+/// 
+/// This struct represents a directed graph that can be constructed by using a regular `Graph`.
+/// When constructing this digraph from a regular `Graph`, the digraph can become cyclic.
+/// 
+/// In the conversion, each edge `a -> b` represents that the number of crossings caused by a node `a` and a node `b` are minimal, when node `a` is ordered before node `b`.
+/// Solving the DFAS problem for this (maybe acyclic) digraph corresponds to solving the OCM problem on the regular `Graph`.
 #[derive(Debug)]
 pub struct PenaltyDigraph {
     number_of_nodes: usize,
@@ -10,6 +18,7 @@ pub struct PenaltyDigraph {
 
 // CONSTRUCTORS
 impl PenaltyDigraph {
+    /// Constructs a new `PenaltyDigraph` without edges
     pub fn new(number_of_nodes: usize) -> PenaltyDigraph {
         let adjacency_list = iter::repeat(HashSet::new()).take(number_of_nodes).collect();
 
@@ -19,6 +28,7 @@ impl PenaltyDigraph {
         }
     }
 
+    /// Constructs a new `PenaltyDigraph` by applying the algorithm described in [this paper](https://dl.acm.org/doi/abs/10.1145/945394.945396).
     pub fn from_graph(graph: &Graph) -> PenaltyDigraph {
         let mut penalty_digraph = PenaltyDigraph::new(graph.number_of_free_nodes);
 
@@ -65,6 +75,10 @@ impl PenaltyDigraph {
 
 // PUBLIC METHODS
 impl PenaltyDigraph {
+    /// Adds an edge that depends on the crossing number between two nodes to the graph.
+    /// 
+    /// Always adds the edge in the direction with less crossings. 
+    /// If the crossings in both orderings are equal, no edge is added.
     fn add_crossings(&mut self, u: usize, v: usize, c_uv: isize, c_vu: isize) {
         if c_vu < c_uv {
             self.add_edge(u, v);
@@ -73,14 +87,19 @@ impl PenaltyDigraph {
         }
     }
 
+    // Adds an edge between two nodes
     fn add_edge(&mut self, u: usize, v: usize) -> bool {
         self.adjacency_list.get_mut(u).unwrap().insert(v)
     }
 
+    /// Checks, if an edge between two nodes exists
     fn edge_exists(&self, u: usize, v: usize) -> bool {
         self.adjacency_list.get(u).unwrap().contains(&v)
     }
 
+    /// Computes an ordering that would solve the DFAS problem
+    /// 
+    /// This algorithm is described in [this paper](https://arxiv.org/pdf/2208.09234.pdf)
     pub fn sort_fas(&self) -> Vec<usize> {
         let mut feedback_arc_set: Vec<usize> = Vec::new();
         for u in 0..self.number_of_nodes {

@@ -7,10 +7,12 @@ use rand::{seq::SliceRandom, thread_rng, Rng};
 
 use crate::{error::Error, graph::Graph};
 
+/// Helper struct that constructs Graphs in different ways
 pub struct GraphBuilder {}
 
 // PUBLIC METHODS ------------------------------------------------------------------
 impl GraphBuilder {
+    /// Constructs a random graph, that suits the description in `Application::run_on_specific_case`
     pub fn build_graph_with_fixed_nodes_and_no_crossings(number_of_fixed_nodes: usize) -> Graph {
         let mut graph = Graph::new(number_of_fixed_nodes, number_of_fixed_nodes);
 
@@ -41,6 +43,7 @@ impl GraphBuilder {
         graph
     }
 
+    /// Constructs a Graph from a pace-formatted .gr file
     pub fn build_graph_from_file(filename: &str) -> Result<Graph, Error> {
         let file = File::open(filename)?;
 
@@ -77,6 +80,7 @@ impl GraphBuilder {
         Ok(graph)
     }
 
+    /// Constructs a random graph
     pub fn build_random_graph(
         number_of_fixed_nodes: usize,
         number_of_free_nodes: usize,
